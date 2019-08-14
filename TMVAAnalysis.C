@@ -56,28 +56,28 @@ void TMVAAnalysis()
 	
 	// Boosted Decision Trees
 	Use["BDT"] = 1;  // uses Adaptive Boost
-
+	Use["DNN"] = 1;
 	//--------------------------------------------
 	// Load data
 	//--------------------------------------------
 	TString dir = "/afs/cern.ch/user/a/addropul/CMSSW_10_6_0_pre4/src/L1Trigger/Run3Ntuplizer/test/";
 	//TString key = "5";
-	TString inputFilename_VBF = dir + "l1TNtuple-VBF.root";
-	TString inputFilename_QCD = dir + "l1TNtuple-QCD.root";
-
+	TString inputFilename_VBF = dir + "l1TNtuple-VBF-large.root";
+	TString inputFilename_ZB = "/afs/cern.ch/work/a/addropul/l1TNtuple-DY.root";
+	//TString inputFilename_ZB =  "/afs/cern.ch/work/o/ojalvo/public/forAdriana/ZeroBiasLarge.root";
 	// Get input file and declare output file where TMVA will store ntuples, hists, etc.
 	TFile *inputFile_VBF = new TFile(inputFilename_VBF.Data());
-	TFile *inputFile_QCD = new TFile(inputFilename_QCD.Data());
+	TFile *inputFile_ZB = new TFile(inputFilename_ZB.Data());
 	TString outputFilename = "TMVA_output.root";
 	TFile *outFile = new TFile(outputFilename, "RECREATE");
 	
 	// Get input tree
 	TTree *inputTree_VBF = (TTree*) inputFile_VBF->Get("l1NtupleProducer/Stage3Regions/efficiencyTree");
-	TTree *inputTree_QCD = (TTree*) inputFile_QCD->Get("l1NtupleProducer/Stage3Regions/efficiencyTree");
+	TTree *inputTree_ZB = (TTree*) inputFile_ZB->Get("l1NtupleProducer/Stage3Regions/efficiencyTree");
 
 	// Split the signal and background into two trees
 	TTree *sigTree = inputTree_VBF->CloneTree(0);    // Create a clone of oldtree and copy 0 entries
-	TTree *bkgTree = inputTree_QCD->CloneTree(0);
+	TTree *bkgTree = inputTree_ZB->CloneTree(0);
 
 	// Declare variables to read from TTree
 	Double_t recoPt_1, recoEta_1, recoPhi_1, recoNthJet_1, recoPt_2, recoEta_2, recoPhi_2, recoNthJet_2,
@@ -109,16 +109,16 @@ void TMVAAnalysis()
         inputTree_VBF->SetBranchAddress("l1DeltaPhi",   &l1DeltaPhi);
         inputTree_VBF->SetBranchAddress("l1Mass", &l1Mass);
 
-        inputTree_QCD->SetBranchAddress("recoPt_1", &recoPt_1);
-        inputTree_QCD->SetBranchAddress("recoPt_2", &recoPt_2);
-        inputTree_QCD->SetBranchAddress("recoDeltaEta", &recoDeltaEta);
-        inputTree_QCD->SetBranchAddress("recoDeltaPhi", &recoDeltaPhi);
-        inputTree_QCD->SetBranchAddress("recoMass", &recoMass);
-        inputTree_QCD->SetBranchAddress("l1Pt_1",    &l1Pt_1);
-        inputTree_QCD->SetBranchAddress("l1Pt_2",   &l1Pt_2);
-        inputTree_QCD->SetBranchAddress("l1DeltaEta", &l1DeltaEta);
-        inputTree_QCD->SetBranchAddress("l1DeltaPhi",   &l1DeltaPhi);
-        inputTree_QCD->SetBranchAddress("l1Mass", &l1Mass);
+        inputTree_ZB->SetBranchAddress("recoPt_1", &recoPt_1);
+        inputTree_ZB->SetBranchAddress("recoPt_2", &recoPt_2);
+        inputTree_ZB->SetBranchAddress("recoDeltaEta", &recoDeltaEta);
+        inputTree_ZB->SetBranchAddress("recoDeltaPhi", &recoDeltaPhi);
+        inputTree_ZB->SetBranchAddress("recoMass", &recoMass);
+        inputTree_ZB->SetBranchAddress("l1Pt_1",    &l1Pt_1);
+        inputTree_ZB->SetBranchAddress("l1Pt_2",   &l1Pt_2);
+        inputTree_ZB->SetBranchAddress("l1DeltaEta", &l1DeltaEta);
+        inputTree_ZB->SetBranchAddress("l1DeltaPhi",   &l1DeltaPhi);
+        inputTree_ZB->SetBranchAddress("l1Mass", &l1Mass);
 
 	// Loop through jets and fill sigTree and bkgTree
 	Int_t i;
@@ -127,8 +127,8 @@ void TMVAAnalysis()
 	        inputTree_VBF->GetEntry(i);
 		sigTree->Fill();
 	}
-	for ( j = 0; j < inputTree_QCD->GetEntries(); j++ ) {
-		inputTree_QCD->GetEntry(j);
+	for ( j = 0; j < inputTree_ZB->GetEntries(); j++ ) {
+		inputTree_ZB->GetEntry(j);
 		bkgTree->Fill();
 	} // end jet loop
 
@@ -179,15 +179,15 @@ void TMVAAnalysis()
 	TCut backgroundCut = "recoTk1IP > -99 && recoTk2IP > -99 && recoTk3IP > -99  && recoTk4IP > -99"; 
 	*/
 
-	TCut signalCut     = "l1Pt_1 > 0 && l1Pt_2 > 0 && l1Mass > 0 && l1Pt_1 < 511 && l1Pt_2 < 511";
-	TCut backgroundCut = "l1Pt_1 > 0 && l1Pt_2 > 0 && l1Mass > 0 && l1Pt_1 < 511 && l1Pt_2 < 511";
+	TCut signalCut     = "l1Pt_1 > 0 && l1Pt_2 > 0 && l1Mass > 0";
+	TCut backgroundCut = "l1Pt_1 > 0 && l1Pt_2 > 0 && l1Mass > 0";
 
 	//TCut signalCut = "";
 	//TCut backgroundCut = "";
 
 	TString datasetOptions = "SplitMode=Random";
 	dataloader->PrepareTrainingAndTestTree(signalCut, backgroundCut, datasetOptions);
-
+	cout << "going to methods" << endl;
 	// Method specification
 	TString methodOptions = "";
 	//  Adaptive Boost
@@ -196,7 +196,24 @@ void TMVAAnalysis()
 	//  TMVA ANN: MLP (recommended ANN) -- all ANNs in TMVA are Multilayer Perceptrons
 	if (Use["MLP"])
 	  //factory->BookMethod(dataloader, TMVA::Types::kMLP, "MLP", methodOptions);
-	factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLP", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=N+5:TestRate=5:!UseRegulator" );
+	  factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLP_1", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=N+5:TestRate=5:ConvergenceTests=10:!UseRegulator" );
+	  factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLP_2", "H:!V:NeuronType=tanh:VarTransform=N:NCycles=600:HiddenLayers=N+5:TestRate=5:SamplingImportance=1:!UseRegulator" );	
+	  factory->BookMethod( dataloader, TMVA::Types::kMLP, "MLP_3", "H:!V:NeuronType=tanh:VarTransform=Decorrelate:NCycles=600:HiddenLayers=N+5:TestRate=5:ConvergenceTests=10:!UseRegulator" );
+	
+	if (Use["DNN"])  
+	  std::cout <<"entered DNN"<<std::endl;
+     	  TString layoutString= "Layout=TANH|100,TANH|50,TANH|10,LINEAR";
+	  TString training1 = "LearningRate=1e-3,Momentum=0.9,Repetitions=1,ConvergenceSteps=10,BatchSize=128,TestRepetitions=1,MaxEpochs=30,WeightDecay=1e-4,Regularization=None,Optimizer=ADAM,DropConfig=0.0+0.0+0.0+0.";
+	  TString trainingStrategyString = "TrainingStrategy=";
+      	  trainingStrategyString += training1; // + "|" + training2;
+
+	  TString dnnOptions = "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=G:WeightInitialization=XAVIERUNIFORM";
+      	  dnnOptions.Append (":");
+	  dnnOptions.Append (layoutString);
+      	  dnnOptions.Append (":");
+	  dnnOptions.Append (trainingStrategyString);
+	  std::cout << dnnOptions << std::endl;
+      	  factory->BookMethod(dataloader, TMVA::Types::kDNN, "DNN", dnnOptions);
 	// Training and Evaluation
 	factory->TrainAllMethods();
 	factory->TestAllMethods();
