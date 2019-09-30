@@ -6,5 +6,6 @@ The Run3Ntuplizer was forked from isobelojalvo/Run3Ntuplizer. When I was still l
 
 The ntuples that I created, located at /afs/cern.ch/work/a/addropul, contain the variables vRegionEt, vRegionPhi, vRegionEta, vRegionEG, vRegionTau. I think they are filled event-by-event. For the tree named ZeroBias_all.root, these variables are in the EfficiencyTree. For the trees l1TNtuple-DY.root,  l1TNtuple-TT.root, and  l1TNtuple-VBF.root, they are contained in the RegionTree, 1. 
 
+Files labeled testL1TCaloSummary-* are the files which created the ntuples. ntup_validation_2.py is the plotting script. TMVAAnalysis.C is the mva training script; it can be run by the commands commented at the top of the code. 
 
 
