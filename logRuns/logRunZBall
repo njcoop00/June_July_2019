@@ -1,0 +1,322 @@
+
+Processing TMVAAnalysis.C...
+<HEADER> DataSetInfo              : [dataset] : Added class "Signal"
+                         : Add Tree efficiencyTree of type Signal with 1422594 events
+<HEADER> DataSetInfo              : [dataset] : Added class "Background"
+                         : Add Tree efficiencyTree of type Background with 548993 events
+going to methods
+<HEADER> Factory                  : Booking method: BDT
+                         : 
+<HEADER> DataSetFactory           : [dataset] : Number of events in input trees
+                         : Dataset[dataset] :     Signal     requirement: "l1Pt_1 > 0 && l1Pt_2 > 0 && l1Mass > 0"
+                         : Dataset[dataset] :     Signal          -- number of events passed: 728717  / sum of weights: 728717
+                         : Dataset[dataset] :     Signal          -- efficiency             : 0.512245
+                         : Dataset[dataset] :     Background requirement: "l1Pt_1 > 0 && l1Pt_2 > 0 && l1Mass > 0"
+                         : Dataset[dataset] :     Background      -- number of events passed: 7733   / sum of weights: 7733 
+                         : Dataset[dataset] :     Background      -- efficiency             : 0.0140858
+                         : Dataset[dataset] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[dataset] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[dataset] : Weight renormalisation mode: "EqualNumEvents": renormalises all event classes ...
+                         : Dataset[dataset] :  such that the effective (weighted) number of events in each class is the same 
+                         : Dataset[dataset] :  (and equals the number of events (entries) given for class=0 )
+                         : Dataset[dataset] : ... i.e. such that Sum[i=1..N_j]{w_i} = N_classA, j=classA, classB, ...
+                         : Dataset[dataset] : ... (note that N_j is the sum of TRAINING events
+                         : Dataset[dataset] :  ..... Testing events are not renormalised nor included in the renormalisation factor!)
+                         : Number of training and testing events
+                         : ---------------------------------------------------------------------------
+                         : Signal     -- training events            : 364358
+                         : Signal     -- testing events             : 364358
+                         : Signal     -- training and testing events: 728716
+                         : Dataset[dataset] : Signal     -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.512245
+                         : Background -- training events            : 3866
+                         : Background -- testing events             : 3866
+                         : Background -- training and testing events: 7732
+                         : Dataset[dataset] : Background -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.0140858
+                         : 
+<HEADER> DataSetInfo              : Correlation matrix (Signal):
+                         : ---------------------------------------------------------
+                         :              l1Pt_1  l1Pt_2 l1DeltaEta l1DeltaPhi  l1Mass
+                         :     l1Pt_1:  +1.000  +0.679     +0.003     +0.003  +0.345
+                         :     l1Pt_2:  +0.679  +1.000     -0.001     +0.002  +0.356
+                         : l1DeltaEta:  +0.003  -0.001     +1.000     +0.003  +0.005
+                         : l1DeltaPhi:  +0.003  +0.002     +0.003     +1.000  -0.002
+                         :     l1Mass:  +0.345  +0.356     +0.005     -0.002  +1.000
+                         : ---------------------------------------------------------
+<HEADER> DataSetInfo              : Correlation matrix (Background):
+                         : ---------------------------------------------------------
+                         :              l1Pt_1  l1Pt_2 l1DeltaEta l1DeltaPhi  l1Mass
+                         :     l1Pt_1:  +1.000  +0.533     -0.020     +0.008  +0.258
+                         :     l1Pt_2:  +0.533  +1.000     -0.025     +0.012  +0.275
+                         : l1DeltaEta:  -0.020  -0.025     +1.000     +0.046  -0.022
+                         : l1DeltaPhi:  +0.008  +0.012     +0.046     +1.000  -0.027
+                         :     l1Mass:  +0.258  +0.275     -0.022     -0.027  +1.000
+                         : ---------------------------------------------------------
+<HEADER> DataSetFactory           : [dataset] :  
+                         : 
+<HEADER> Factory                  : Booking method: MLP_1
+                         : 
+<HEADER> MLP_1                    : [dataset] : Create Transformation "N" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'l1Pt_1' <---> Output : variable 'l1Pt_1'
+                         : Input : variable 'l1Pt_2' <---> Output : variable 'l1Pt_2'
+                         : Input : variable 'l1DeltaEta' <---> Output : variable 'l1DeltaEta'
+                         : Input : variable 'l1DeltaPhi' <---> Output : variable 'l1DeltaPhi'
+                         : Input : variable 'l1Mass' <---> Output : variable 'l1Mass'
+<HEADER> MLP_1                    : Building Network. 
+                         : Initializing weights
+<HEADER> Factory                  : Booking method: MLP_2
+                         : 
+<HEADER> MLP_2                    : [dataset] : Create Transformation "N" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'l1Pt_1' <---> Output : variable 'l1Pt_1'
+                         : Input : variable 'l1Pt_2' <---> Output : variable 'l1Pt_2'
+                         : Input : variable 'l1DeltaEta' <---> Output : variable 'l1DeltaEta'
+                         : Input : variable 'l1DeltaPhi' <---> Output : variable 'l1DeltaPhi'
+                         : Input : variable 'l1Mass' <---> Output : variable 'l1Mass'
+<HEADER> MLP_2                    : Building Network. 
+                         : Initializing weights
+<HEADER> Factory                  : Booking method: MLP_3
+                         : 
+<HEADER> MLP_3                    : [dataset] : Create Transformation "Decorrelate" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'l1Pt_1' <---> Output : variable 'l1Pt_1'
+                         : Input : variable 'l1Pt_2' <---> Output : variable 'l1Pt_2'
+                         : Input : variable 'l1DeltaEta' <---> Output : variable 'l1DeltaEta'
+                         : Input : variable 'l1DeltaPhi' <---> Output : variable 'l1DeltaPhi'
+                         : Input : variable 'l1Mass' <---> Output : variable 'l1Mass'
+<HEADER> MLP_3                    : Building Network. 
+                         : Initializing weights
+entered DNN
+!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=G:WeightInitialization=XAVIERUNIFORM:Layout=TANH|100,TANH|50,TANH|10,LINEAR:TrainingStrategy=LearningRate=1e-3,Momentum=0.9,Repetitions=1,ConvergenceSteps=10,BatchSize=128,TestRepetitions=1,MaxEpochs=30,WeightDecay=1e-4,Regularization=None,Optimizer=ADAM,DropConfig=0.0+0.0+0.0+0.
+<HEADER> Factory                  : Booking method: DNN
+                         : 
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=G:WeightInitialization=XAVIERUNIFORM:Layout=TANH|100,TANH|50,TANH|10,LINEAR:TrainingStrategy=LearningRate=1e-3,Momentum=0.9,Repetitions=1,ConvergenceSteps=10,BatchSize=128,TestRepetitions=1,MaxEpochs=30,WeightDecay=1e-4,Regularization=None,Optimizer=ADAM,DropConfig=0.0+0.0+0.0+0."
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     <none>
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     Boost_num: "0" [Number of times the classifier will be boosted]
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=G:WeightInitialization=XAVIERUNIFORM:Layout=TANH|100,TANH|50,TANH|10,LINEAR:TrainingStrategy=LearningRate=1e-3,Momentum=0.9,Repetitions=1,ConvergenceSteps=10,BatchSize=128,TestRepetitions=1,MaxEpochs=30,WeightDecay=1e-4,Regularization=None,Optimizer=ADAM,DropConfig=0.0+0.0+0.0+0."
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
+<VERBOSE>                          :     VarTransform: "G" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
+<VERBOSE>                          :     H: "False" [Print method-specific help message]
+<VERBOSE>                          :     Layout: "TANH|100,TANH|50,TANH|10,LINEAR" [Layout of the network.]
+<VERBOSE>                          :     ErrorStrategy: "CROSSENTROPY" [Loss function: Mean squared error (regression) or cross entropy (binary classification).]
+<VERBOSE>                          :     WeightInitialization: "XAVIERUNIFORM" [Weight initialization strategy]
+<VERBOSE>                          :     TrainingStrategy: "LearningRate=1e-3,Momentum=0.9,Repetitions=1,ConvergenceSteps=10,BatchSize=128,TestRepetitions=1,MaxEpochs=30,WeightDecay=1e-4,Regularization=None,Optimizer=ADAM,DropConfig=0.0+0.0+0.0+0." [Defines the training strategies.]
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     VerbosityLevel: "Default" [Verbosity level]
+<VERBOSE>                          :     CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
+<VERBOSE>                          :     IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in the training (but are included for testing and performance evaluation)]
+<VERBOSE>                          :     ValidationSize: "20%" [Part of the training data to use for validation. Specify as 0.2 or 20% to use a fifth of the data set as validation set. Specify as 100 to use exactly 100 events. (Default: 20%)]
+<VERBOSE>                          :     Architecture: "CPU" [Which architecture to perform the training on.]
+<HEADER> DNN                      : [dataset] : Create Transformation "G" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'l1Pt_1' <---> Output : variable 'l1Pt_1'
+                         : Input : variable 'l1Pt_2' <---> Output : variable 'l1Pt_2'
+                         : Input : variable 'l1DeltaEta' <---> Output : variable 'l1DeltaEta'
+                         : Input : variable 'l1DeltaPhi' <---> Output : variable 'l1DeltaPhi'
+                         : Input : variable 'l1Mass' <---> Output : variable 'l1Mass'
+                         : Preparing the Gaussian transformation...
+<HEADER> TFHandler_DNN            :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:   0.0073261     0.99925   [     -3.2558      5.7307 ]
+                         :     l1Pt_2:    0.013691     0.99680   [     -3.0567      5.7307 ]
+                         : l1DeltaEta:    0.010002     0.93179   [     -3.6393      5.7307 ]
+                         : l1DeltaPhi:  -0.0054998     0.99899   [     -3.3222      5.7307 ]
+                         :     l1Mass:    0.013162      1.0001   [     -4.7453      5.7307 ]
+                         : ---------------------------------------------------------------------
+<HEADER> Factory                  : Train all methods
+<HEADER> Factory                  : [dataset] : Create Transformation "I" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'l1Pt_1' <---> Output : variable 'l1Pt_1'
+                         : Input : variable 'l1Pt_2' <---> Output : variable 'l1Pt_2'
+                         : Input : variable 'l1DeltaEta' <---> Output : variable 'l1DeltaEta'
+                         : Input : variable 'l1DeltaPhi' <---> Output : variable 'l1DeltaPhi'
+                         : Input : variable 'l1Mass' <---> Output : variable 'l1Mass'
+<HEADER> TFHandler_Factory        :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:      56.606      48.174   [      5.5000      511.50 ]
+                         :     l1Pt_2:      40.382      32.852   [      5.5000      511.50 ]
+                         : l1DeltaEta:    0.025519      3.0668   [     -9.3275      10.185 ]
+                         : l1DeltaPhi:    0.032493      2.8967   [     -6.1912      6.1912 ]
+                         :     l1Mass:      254.10      365.42   [  6.7171e-07      7863.8 ]
+                         : ---------------------------------------------------------------------
+                         : Ranking input variables (method unspecific)...
+<HEADER> IdTransformation         : Ranking result (top variable is best ranked)
+                         : -----------------------------------
+                         : Rank : Variable   : Separation
+                         : -----------------------------------
+                         :    1 : l1Pt_1     : 3.578e-01
+                         :    2 : l1Pt_2     : 2.173e-01
+                         :    3 : l1Mass     : 1.430e-01
+                         :    4 : l1DeltaPhi : 4.880e-02
+                         :    5 : l1DeltaEta : 2.943e-02
+                         : -----------------------------------
+<HEADER> Factory                  : Train method: BDT for Classification
+                         : 
+<HEADER> BDT                      : #events: (reweighted) sig: 184112 bkg: 184112
+                         : #events: (unweighted) sig: 364358 bkg: 3866
+                         : Training 800 Decision Trees ... patience please
+                         : Elapsed time for training with 368224 events: 236 sec         
+<HEADER> BDT                      : [dataset] : Evaluation of BDT on training sample (368224 events)
+                         : Elapsed time for evaluation of 368224 events: 31.7 sec       
+                         : Creating xml weight file: dataset/weights/TMVAClassification_BDT.weights.xml
+                         : Creating standalone class: dataset/weights/TMVAClassification_BDT.class.C
+                         : TMVA_output_ZBall.root:/dataset/Method_BDT/BDT
+<HEADER> Factory                  : Training finished
+                         : 
+<HEADER> Factory                  : Train method: MLP_1 for Classification
+                         : 
+                         : 
+                         : ================================================================
+                         : H e l p   f o r   M V A   m e t h o d   [ MLP_1 ] :
+                         : 
+                         : --- Short description:
+                         : 
+                         : The MLP artificial neural network (ANN) is a traditional feed-
+                         : forward multilayer perceptron implementation. The MLP has a user-
+                         : defined hidden layer architecture, while the number of input (output)
+                         : nodes is determined by the input variables (output classes, i.e., 
+                         : signal and one background). 
+                         : 
+                         : --- Performance optimisation:
+                         : 
+                         : Neural networks are stable and performing for a large variety of 
+                         : linear and non-linear classification problems. However, in contrast
+                         : to (e.g.) boosted decision trees, the user is advised to reduce the 
+                         : number of input variables that have only little discrimination power. 
+                         : 
+                         : In the tests we have carried out so far, the MLP and ROOT networks
+                         : (TMlpANN, interfaced via TMVA) performed equally well, with however
+                         : a clear speed advantage for the MLP. The Clermont-Ferrand neural 
+                         : net (CFMlpANN) exhibited worse classification performance in these
+                         : tests, which is partly due to the slow convergence of its training
+                         : (at least 10k training cycles are required to achieve approximately
+                         : competitive results).
+                         : 
+                         : Overtraining: only the TMlpANN performs an explicit separation of the
+                         : full training sample into independent training and validation samples.
+                         : We have found that in most high-energy physics applications the 
+                         : available degrees of freedom (training events) are sufficient to 
+                         : constrain the weights of the relatively simple architectures required
+                         : to achieve good performance. Hence no overtraining should occur, and 
+                         : the use of validation samples would only reduce the available training
+                         : information. However, if the performance on the training sample is 
+                         : found to be significantly better than the one found with the inde-
+                         : pendent test sample, caution is needed. The results for these samples 
+                         : are printed to standard output at the end of each training job.
+                         : 
+                         : --- Performance tuning via configuration options:
+                         : 
+                         : The hidden layer architecture for all ANNs is defined by the option
+                         : "HiddenLayers=N+1,N,...", where here the first hidden layer has N+1
+                         : neurons and the second N neurons (and so on), and where N is the number  
+                         : of input variables. Excessive numbers of hidden layers should be avoided,
+                         : in favour of more neurons in the first hidden layer.
+                         : 
+                         : The number of cycles should be above 500. As said, if the number of
+                         : adjustable weights is small compared to the training sample size,
+                         : using a large number of training samples should not lead to overtraining.
+                         : 
+                         : <Suppress this message by specifying "!H" in the booking option>
+                         : ================================================================
+                         : 
+<HEADER> TFHandler_MLP_1          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:    -0.79800     0.19041   [     -1.0000      1.0000 ]
+                         :     l1Pt_2:    -0.86213     0.12985   [     -1.0000      1.0000 ]
+                         : l1DeltaEta:   -0.041330     0.31434   [     -1.0000      1.0000 ]
+                         : l1DeltaPhi:   0.0052482     0.46788   [     -1.0000      1.0000 ]
+                         :     l1Mass:    -0.93537    0.092937   [     -1.0000      1.0000 ]
+                         : ---------------------------------------------------------------------
+                         : Training Network
+                         : 
+                         : Inaccurate progress timing for MLP... 
+                         : Elapsed time for training with 368224 events: 171 sec         
+<HEADER> MLP_1                    : [dataset] : Evaluation of MLP_1 on training sample (368224 events)
+                         : Elapsed time for evaluation of 368224 events: 0.77 sec       
+                         : Creating xml weight file: dataset/weights/TMVAClassification_MLP_1.weights.xml
+                         : Creating standalone class: dataset/weights/TMVAClassification_MLP_1.class.C
+                         : Write special histos to file: TMVA_output_ZBall.root:/dataset/Method_MLP_1/MLP_1
+<HEADER> Factory                  : Training finished
+                         : 
+<HEADER> Factory                  : Train method: MLP_2 for Classification
+                         : 
+                         : 
+                         : ================================================================
+                         : H e l p   f o r   M V A   m e t h o d   [ MLP_2 ] :
+                         : 
+                         : --- Short description:
+                         : 
+                         : The MLP artificial neural network (ANN) is a traditional feed-
+                         : forward multilayer perceptron implementation. The MLP has a user-
+                         : defined hidden layer architecture, while the number of input (output)
+                         : nodes is determined by the input variables (output classes, i.e., 
+                         : signal and one background). 
+                         : 
+                         : --- Performance optimisation:
+                         : 
+                         : Neural networks are stable and performing for a large variety of 
+                         : linear and non-linear classification problems. However, in contrast
+                         : to (e.g.) boosted decision trees, the user is advised to reduce the 
+                         : number of input variables that have only little discrimination power. 
+                         : 
+                         : In the tests we have carried out so far, the MLP and ROOT networks
+                         : (TMlpANN, interfaced via TMVA) performed equally well, with however
+                         : a clear speed advantage for the MLP. The Clermont-Ferrand neural 
+                         : net (CFMlpANN) exhibited worse classification performance in these
+                         : tests, which is partly due to the slow convergence of its training
+                         : (at least 10k training cycles are required to achieve approximately
+                         : competitive results).
+                         : 
+                         : Overtraining: only the TMlpANN performs an explicit separation of the
+                         : full training sample into independent training and validation samples.
+                         : We have found that in most high-energy physics applications the 
+                         : available degrees of freedom (training events) are sufficient to 
+                         : constrain the weights of the relatively simple architectures required
+                         : to achieve good performance. Hence no overtraining should occur, and 
+                         : the use of validation samples would only reduce the available training
+                         : information. However, if the performance on the training sample is 
+                         : found to be significantly better than the one found with the inde-
+                         : pendent test sample, caution is needed. The results for these samples 
+                         : are printed to standard output at the end of each training job.
+                         : 
+                         : --- Performance tuning via configuration options:
+                         : 
+                         : The hidden layer architecture for all ANNs is defined by the option
+                         : "HiddenLayers=N+1,N,...", where here the first hidden layer has N+1
+                         : neurons and the second N neurons (and so on), and where N is the number  
+                         : of input variables. Excessive numbers of hidden layers should be avoided,
+                         : in favour of more neurons in the first hidden layer.
+                         : 
+                         : The number of cycles should be above 500. As said, if the number of
+                         : adjustable weights is small compared to the training sample size,
+                         : using a large number of training samples should not lead to overtraining.
+                         : 
+                         : <Suppress this message by specifying "!H" in the booking option>
+                         : ================================================================
+                         : 
+<HEADER> TFHandler_MLP_2          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:    -0.79800     0.19041   [     -1.0000      1.0000 ]
+                         :     l1Pt_2:    -0.86213     0.12985   [     -1.0000      1.0000 ]
+                         : l1DeltaEta:   -0.041330     0.31434   [     -1.0000      1.0000 ]
+                         : l1DeltaPhi:   0.0052482     0.46788   [     -1.0000      1.0000 ]
+                         :     l1Mass:    -0.93537    0.092937   [     -1.0000      1.0000 ]
+                         : ---------------------------------------------------------------------
+                         : Training Network
+                         : 

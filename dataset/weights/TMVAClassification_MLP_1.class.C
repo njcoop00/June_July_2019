@@ -10,10 +10,10 @@ Method         : MLP::MLP_1
 TMVA Release   : 4.2.1         [262657]
 ROOT Release   : 6.12/07       [396295]
 Creator        : addropul
-Date           : Wed Aug 14 22:40:39 2019
+Date           : Tue Aug 27 20:56:40 2019
 Host           : Linux cmsbuild89.cern.ch 2.6.32-696.30.1.el6.x86_64 #1 SMP Tue May 22 06:09:36 CEST 2018 x86_64 x86_64 x86_64 GNU/Linux
 Dir            : /afs/cern.ch/user/a/addropul/CMSSW_10_6_0_pre4/src/L1Trigger/Run3Ntuplizer/test/June_July_2019
-Training events: 21883
+Training events: 370753
 Analysis type  : [Classification]
 
 
@@ -61,9 +61,9 @@ WeightRange: "1.000000e+00" [Take the events for the estimator calculations from
 NVar 5
 l1Pt_1                        l1Pt_1                        l1Pt_1                        l1Pt_1                                                          'D'    [5.5,511.5]
 l1Pt_2                        l1Pt_2                        l1Pt_2                        l1Pt_2                                                          'D'    [5.5,511.5]
-l1DeltaEta                    l1DeltaEta                    l1DeltaEta                    l1DeltaEta                                                      'D'    [-8.57999992371,8.93999958038]
-l1DeltaPhi                    l1DeltaPhi                    l1DeltaPhi                    l1DeltaPhi                                                      'D'    [-6.19119977951,6.10400009155]
-l1Mass                        l1Mass                        l1Mass                        l1Mass                                                          'D'    [8.66790962219,5373.81054688]
+l1DeltaEta                    l1DeltaEta                    l1DeltaEta                    l1DeltaEta                                                      'D'    [-9.32750034332,10.1850004196]
+l1DeltaPhi                    l1DeltaPhi                    l1DeltaPhi                    l1DeltaPhi                                                      'D'    [-6.19119977951,6.19119977951]
+l1Mass                        l1Mass                        l1Mass                        l1Mass                                                          'D'    [6.71710211009e-07,7863.77636719]
 NSpec 0
 
 
@@ -144,7 +144,7 @@ class ReadMLP_1 : public IClassifierReader {
       fVmin[3] = -1;
       fVmax[3] = 1;
       fVmin[4] = -1;
-      fVmax[4] = 1;
+      fVmax[4] = 0.99999988079071;
 
       // initialize input variable types
       fType[0] = 'D';
@@ -228,78 +228,78 @@ inline void ReadMLP_1::Initialize()
    fLayerSize[1] = 11;
    fLayerSize[2] = 1;
    // weight matrix from layer 0 to 1
-   fWeightMatrix0to1[0][0] = 2.0068645154371;
-   fWeightMatrix0to1[1][0] = 2.07240001781648;
-   fWeightMatrix0to1[2][0] = 0.519472630788904;
-   fWeightMatrix0to1[3][0] = 11.1557143621215;
-   fWeightMatrix0to1[4][0] = -3.28439202507353;
-   fWeightMatrix0to1[5][0] = -2.23250241528593;
-   fWeightMatrix0to1[6][0] = -1.7580094362543;
-   fWeightMatrix0to1[7][0] = 2.73748175220415;
-   fWeightMatrix0to1[8][0] = -0.988333754502471;
-   fWeightMatrix0to1[9][0] = -3.71314859067179;
-   fWeightMatrix0to1[0][1] = -0.724012031266249;
-   fWeightMatrix0to1[1][1] = -0.130392696735935;
-   fWeightMatrix0to1[2][1] = -1.71606350019599;
-   fWeightMatrix0to1[3][1] = 1.53276326856316;
-   fWeightMatrix0to1[4][1] = -4.38287353756981;
-   fWeightMatrix0to1[5][1] = -0.259707167579459;
-   fWeightMatrix0to1[6][1] = -0.322518067449128;
-   fWeightMatrix0to1[7][1] = 1.78286260090655;
-   fWeightMatrix0to1[8][1] = 0.543453754435384;
-   fWeightMatrix0to1[9][1] = 1.37696296570246;
-   fWeightMatrix0to1[0][2] = -0.0105833803871413;
-   fWeightMatrix0to1[1][2] = -11.6895544638598;
-   fWeightMatrix0to1[2][2] = -0.0357986603223741;
-   fWeightMatrix0to1[3][2] = 0.0574313720250468;
-   fWeightMatrix0to1[4][2] = -1.66725247068231;
-   fWeightMatrix0to1[5][2] = -12.3718770023176;
-   fWeightMatrix0to1[6][2] = 0.0524873154053277;
-   fWeightMatrix0to1[7][2] = -1.04068842945837;
-   fWeightMatrix0to1[8][2] = -0.049289607121283;
-   fWeightMatrix0to1[9][2] = -0.0570643213538661;
-   fWeightMatrix0to1[0][3] = 0.230847680674509;
-   fWeightMatrix0to1[1][3] = -0.00822752686541312;
-   fWeightMatrix0to1[2][3] = -0.0422483052399487;
-   fWeightMatrix0to1[3][3] = -0.0571675535296796;
-   fWeightMatrix0to1[4][3] = -0.727226771103005;
-   fWeightMatrix0to1[5][3] = 0.053191989210387;
-   fWeightMatrix0to1[6][3] = -0.0480079456222979;
-   fWeightMatrix0to1[7][3] = 1.65419351767335;
-   fWeightMatrix0to1[8][3] = 0.00584241651021599;
-   fWeightMatrix0to1[9][3] = -0.0570415869876686;
-   fWeightMatrix0to1[0][4] = 0.945749933793314;
-   fWeightMatrix0to1[1][4] = 2.95397962662712;
-   fWeightMatrix0to1[2][4] = 0.694821136757416;
-   fWeightMatrix0to1[3][4] = 1.46753102306791;
-   fWeightMatrix0to1[4][4] = 1.94559358510067;
-   fWeightMatrix0to1[5][4] = -2.99993569432657;
-   fWeightMatrix0to1[6][4] = 0.268353512459638;
-   fWeightMatrix0to1[7][4] = 1.20554610088044;
-   fWeightMatrix0to1[8][4] = 1.54274379265991;
-   fWeightMatrix0to1[9][4] = 0.595319077532962;
-   fWeightMatrix0to1[0][5] = 1.53162309239981;
-   fWeightMatrix0to1[1][5] = 1.80359905217893;
-   fWeightMatrix0to1[2][5] = -0.44125438051431;
-   fWeightMatrix0to1[3][5] = 11.6965025684067;
-   fWeightMatrix0to1[4][5] = -0.847413135673707;
-   fWeightMatrix0to1[5][5] = -2.57131629232283;
-   fWeightMatrix0to1[6][5] = -1.40923438960518;
-   fWeightMatrix0to1[7][5] = -3.00598283424516;
-   fWeightMatrix0to1[8][5] = 1.14065700483732;
-   fWeightMatrix0to1[9][5] = -1.19429510284031;
+   fWeightMatrix0to1[0][0] = -28.5950745544962;
+   fWeightMatrix0to1[1][0] = 45.8418981783574;
+   fWeightMatrix0to1[2][0] = 10.5326776187551;
+   fWeightMatrix0to1[3][0] = 91.2778386147135;
+   fWeightMatrix0to1[4][0] = -72.4393431197587;
+   fWeightMatrix0to1[5][0] = -32.3085495490271;
+   fWeightMatrix0to1[6][0] = 10.8976726223553;
+   fWeightMatrix0to1[7][0] = -4.41450155349681;
+   fWeightMatrix0to1[8][0] = 0.846486883190147;
+   fWeightMatrix0to1[9][0] = -7.5571899975096;
+   fWeightMatrix0to1[0][1] = -3.04407675583591;
+   fWeightMatrix0to1[1][1] = 4.40181992458369;
+   fWeightMatrix0to1[2][1] = 10.8492541088879;
+   fWeightMatrix0to1[3][1] = 10.0055354061585;
+   fWeightMatrix0to1[4][1] = 5.33990812847318;
+   fWeightMatrix0to1[5][1] = -8.38607686968934;
+   fWeightMatrix0to1[6][1] = 3.30007209484944;
+   fWeightMatrix0to1[7][1] = 3.10221405281528;
+   fWeightMatrix0to1[8][1] = 3.09922832041344;
+   fWeightMatrix0to1[9][1] = -9.32245349340627;
+   fWeightMatrix0to1[0][2] = 0.926528428262036;
+   fWeightMatrix0to1[1][2] = -2.4899595245561;
+   fWeightMatrix0to1[2][2] = 29.4446503456431;
+   fWeightMatrix0to1[3][2] = -102.492288025242;
+   fWeightMatrix0to1[4][2] = -105.520808439344;
+   fWeightMatrix0to1[5][2] = -10.634557368013;
+   fWeightMatrix0to1[6][2] = 43.7288854652762;
+   fWeightMatrix0to1[7][2] = -34.9558540280034;
+   fWeightMatrix0to1[8][2] = -38.8944318928426;
+   fWeightMatrix0to1[9][2] = 3.60059118187722;
+   fWeightMatrix0to1[0][3] = -32.7425926644337;
+   fWeightMatrix0to1[1][3] = 20.5341336458804;
+   fWeightMatrix0to1[2][3] = -36.1732300955243;
+   fWeightMatrix0to1[3][3] = 2.67137463461912;
+   fWeightMatrix0to1[4][3] = 2.8948537103522;
+   fWeightMatrix0to1[5][3] = 0.80151538529896;
+   fWeightMatrix0to1[6][3] = -41.4365593457367;
+   fWeightMatrix0to1[7][3] = 43.1704935182686;
+   fWeightMatrix0to1[8][3] = -46.4716619620296;
+   fWeightMatrix0to1[9][3] = 6.59665113539887;
+   fWeightMatrix0to1[0][4] = -10.4200825144402;
+   fWeightMatrix0to1[1][4] = -2.92368419176048;
+   fWeightMatrix0to1[2][4] = 6.90192304777718;
+   fWeightMatrix0to1[3][4] = -8.32244261224406;
+   fWeightMatrix0to1[4][4] = -7.92013057352668;
+   fWeightMatrix0to1[5][4] = 11.5981198650551;
+   fWeightMatrix0to1[6][4] = -3.50050737617305;
+   fWeightMatrix0to1[7][4] = 3.19432836899644;
+   fWeightMatrix0to1[8][4] = 13.441729630565;
+   fWeightMatrix0to1[9][4] = 0.494119968529138;
+   fWeightMatrix0to1[0][5] = -16.8119565745461;
+   fWeightMatrix0to1[1][5] = 38.5001277100792;
+   fWeightMatrix0to1[2][5] = -4.87824693371155;
+   fWeightMatrix0to1[3][5] = 53.6945571654282;
+   fWeightMatrix0to1[4][5] = -48.9300649665471;
+   fWeightMatrix0to1[5][5] = 0.74569861704086;
+   fWeightMatrix0to1[6][5] = 15.3659616175701;
+   fWeightMatrix0to1[7][5] = -13.2125687701701;
+   fWeightMatrix0to1[8][5] = -18.3506379373256;
+   fWeightMatrix0to1[9][5] = 4.43870235854478;
    // weight matrix from layer 1 to 2
-   fWeightMatrix1to2[0][0] = 0.333344033660849;
-   fWeightMatrix1to2[0][1] = 1.2467131593186;
-   fWeightMatrix1to2[0][2] = 0.0484270966096134;
-   fWeightMatrix1to2[0][3] = 1.1328235608125;
-   fWeightMatrix1to2[0][4] = 1.11517187427038;
-   fWeightMatrix1to2[0][5] = -1.2215919565093;
-   fWeightMatrix1to2[0][6] = -0.255828345692356;
-   fWeightMatrix1to2[0][7] = -1.78932220189752;
-   fWeightMatrix1to2[0][8] = -0.0132724297385492;
-   fWeightMatrix1to2[0][9] = -0.389937425964182;
-   fWeightMatrix1to2[0][10] = -1.39591409511383;
+   fWeightMatrix1to2[0][0] = -1.63384313433173;
+   fWeightMatrix1to2[0][1] = 0.662704896431406;
+   fWeightMatrix1to2[0][2] = -0.425924168245197;
+   fWeightMatrix1to2[0][3] = 1.93273005590586;
+   fWeightMatrix1to2[0][4] = -0.360523612879333;
+   fWeightMatrix1to2[0][5] = 1.05090154760357;
+   fWeightMatrix1to2[0][6] = -0.376637954197824;
+   fWeightMatrix1to2[0][7] = -0.592618157927066;
+   fWeightMatrix1to2[0][8] = 1.20298705425667;
+   fWeightMatrix1to2[0][9] = 1.76647125090241;
+   fWeightMatrix1to2[0][10] = -0.44893897650443;
 }
 
 inline double ReadMLP_1::GetMvaValue__( const std::vector<double>& inputValues ) const
@@ -397,33 +397,33 @@ inline void ReadMLP_1::InitTransform_1()
    fMin_1[0][0] = 5.5;
    fMax_1[0][0] = 511.5;
    fMin_1[1][0] = 6;
-   fMax_1[1][0] = 482.5;
+   fMax_1[1][0] = 472.5;
    fMin_1[2][0] = 5.5;
    fMax_1[2][0] = 511.5;
    fMin_1[0][1] = 5.5;
    fMax_1[0][1] = 511.5;
    fMin_1[1][1] = 5.5;
-   fMax_1[1][1] = 428.5;
+   fMax_1[1][1] = 511.5;
    fMin_1[2][1] = 5.5;
    fMax_1[2][1] = 511.5;
-   fMin_1[0][2] = -8.57999992371;
-   fMax_1[0][2] = 8.93999958038;
+   fMin_1[0][2] = -9.32750034332;
+   fMax_1[0][2] = 10.1850004196;
    fMin_1[1][2] = -8.23999977112;
-   fMax_1[1][2] = 8.58500003815;
-   fMin_1[2][2] = -8.57999992371;
-   fMax_1[2][2] = 8.93999958038;
+   fMax_1[1][2] = 8.76000022888;
+   fMin_1[2][2] = -9.32750034332;
+   fMax_1[2][2] = 10.1850004196;
    fMin_1[0][3] = -6.19119977951;
-   fMax_1[0][3] = 6.10400009155;
-   fMin_1[1][3] = -6.01679992676;
-   fMax_1[1][3] = 6.10400009155;
+   fMax_1[0][3] = 6.19119977951;
+   fMin_1[1][3] = -5.92959976196;
+   fMax_1[1][3] = 6.01679992676;
    fMin_1[2][3] = -6.19119977951;
-   fMax_1[2][3] = 6.10400009155;
-   fMin_1[0][4] = 10.3359603882;
-   fMax_1[0][4] = 5373.81054688;
+   fMax_1[2][3] = 6.19119977951;
+   fMin_1[0][4] = 6.71710211009e-07;
+   fMax_1[0][4] = 7863.77636719;
    fMin_1[1][4] = 8.66790962219;
-   fMax_1[1][4] = 2889.15795898;
-   fMin_1[2][4] = 8.66790962219;
-   fMax_1[2][4] = 5373.81054688;
+   fMax_1[1][4] = 3011.11083984;
+   fMin_1[2][4] = 6.71710211009e-07;
+   fMax_1[2][4] = 7863.77636719;
 }
 
 //_______________________________________________________________________
