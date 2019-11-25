@@ -1,0 +1,1252 @@
+
+Processing TMVAAnalysis.C...
+<HEADER> DataSetInfo              : [dataset] : Added class "Signal"
+                         : Add Tree efficiencyTree of type Signal with 1422594 events
+<HEADER> DataSetInfo              : [dataset] : Added class "Background"
+                         : Add Tree efficiencyTree of type Background with 240000 events
+going to methods
+<HEADER> Factory                  : Booking method: BDT
+                         : 
+<HEADER> DataSetFactory           : [dataset] : Number of events in input trees
+                         : Dataset[dataset] :     Signal     requirement: "l1Pt_1 > 0 && l1Pt_2 > 0 && l1Mass > 0"
+                         : Dataset[dataset] :     Signal          -- number of events passed: 728717  / sum of weights: 728717
+                         : Dataset[dataset] :     Signal          -- efficiency             : 0.512245
+                         : Dataset[dataset] :     Background requirement: "l1Pt_1 > 0 && l1Pt_2 > 0 && l1Mass > 0"
+                         : Dataset[dataset] :     Background      -- number of events passed: 3377   / sum of weights: 3377 
+                         : Dataset[dataset] :     Background      -- efficiency             : 0.0140708
+                         : Dataset[dataset] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[dataset] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[dataset] : Weight renormalisation mode: "EqualNumEvents": renormalises all event classes ...
+                         : Dataset[dataset] :  such that the effective (weighted) number of events in each class is the same 
+                         : Dataset[dataset] :  (and equals the number of events (entries) given for class=0 )
+                         : Dataset[dataset] : ... i.e. such that Sum[i=1..N_j]{w_i} = N_classA, j=classA, classB, ...
+                         : Dataset[dataset] : ... (note that N_j is the sum of TRAINING events
+                         : Dataset[dataset] :  ..... Testing events are not renormalised nor included in the renormalisation factor!)
+                         : Number of training and testing events
+                         : ---------------------------------------------------------------------------
+                         : Signal     -- training events            : 364358
+                         : Signal     -- testing events             : 364358
+                         : Signal     -- training and testing events: 728716
+                         : Dataset[dataset] : Signal     -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.512245
+                         : Background -- training events            : 1688
+                         : Background -- testing events             : 1688
+                         : Background -- training and testing events: 3376
+                         : Dataset[dataset] : Background -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.0140708
+                         : 
+<HEADER> DataSetInfo              : Correlation matrix (Signal):
+                         : ---------------------------------------------------------
+                         :              l1Pt_1  l1Pt_2 l1DeltaEta l1DeltaPhi  l1Mass
+                         :     l1Pt_1:  +1.000  +0.679     +0.003     +0.003  +0.345
+                         :     l1Pt_2:  +0.679  +1.000     -0.001     +0.002  +0.356
+                         : l1DeltaEta:  +0.003  -0.001     +1.000     +0.003  +0.005
+                         : l1DeltaPhi:  +0.003  +0.002     +0.003     +1.000  -0.002
+                         :     l1Mass:  +0.345  +0.356     +0.005     -0.002  +1.000
+                         : ---------------------------------------------------------
+<HEADER> DataSetInfo              : Correlation matrix (Background):
+                         : ---------------------------------------------------------
+                         :              l1Pt_1  l1Pt_2 l1DeltaEta l1DeltaPhi  l1Mass
+                         :     l1Pt_1:  +1.000  +0.563     -0.015     +0.021  +0.289
+                         :     l1Pt_2:  +0.563  +1.000     -0.037     -0.008  +0.315
+                         : l1DeltaEta:  -0.015  -0.037     +1.000     +0.042  -0.069
+                         : l1DeltaPhi:  +0.021  -0.008     +0.042     +1.000  -0.006
+                         :     l1Mass:  +0.289  +0.315     -0.069     -0.006  +1.000
+                         : ---------------------------------------------------------
+<HEADER> DataSetFactory           : [dataset] :  
+                         : 
+<HEADER> Factory                  : Booking method: MLP_1
+                         : 
+<HEADER> MLP_1                    : [dataset] : Create Transformation "N" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'l1Pt_1' <---> Output : variable 'l1Pt_1'
+                         : Input : variable 'l1Pt_2' <---> Output : variable 'l1Pt_2'
+                         : Input : variable 'l1DeltaEta' <---> Output : variable 'l1DeltaEta'
+                         : Input : variable 'l1DeltaPhi' <---> Output : variable 'l1DeltaPhi'
+                         : Input : variable 'l1Mass' <---> Output : variable 'l1Mass'
+<HEADER> MLP_1                    : Building Network. 
+                         : Initializing weights
+<HEADER> Factory                  : Booking method: MLP_2
+                         : 
+<HEADER> MLP_2                    : [dataset] : Create Transformation "N" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'l1Pt_1' <---> Output : variable 'l1Pt_1'
+                         : Input : variable 'l1Pt_2' <---> Output : variable 'l1Pt_2'
+                         : Input : variable 'l1DeltaEta' <---> Output : variable 'l1DeltaEta'
+                         : Input : variable 'l1DeltaPhi' <---> Output : variable 'l1DeltaPhi'
+                         : Input : variable 'l1Mass' <---> Output : variable 'l1Mass'
+<HEADER> MLP_2                    : Building Network. 
+                         : Initializing weights
+<HEADER> Factory                  : Booking method: MLP_3
+                         : 
+<HEADER> MLP_3                    : [dataset] : Create Transformation "Decorrelate" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'l1Pt_1' <---> Output : variable 'l1Pt_1'
+                         : Input : variable 'l1Pt_2' <---> Output : variable 'l1Pt_2'
+                         : Input : variable 'l1DeltaEta' <---> Output : variable 'l1DeltaEta'
+                         : Input : variable 'l1DeltaPhi' <---> Output : variable 'l1DeltaPhi'
+                         : Input : variable 'l1Mass' <---> Output : variable 'l1Mass'
+<HEADER> MLP_3                    : Building Network. 
+                         : Initializing weights
+entered DNN
+!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=G:WeightInitialization=XAVIERUNIFORM:Layout=TANH|100,TANH|50,TANH|10,LINEAR:TrainingStrategy=LearningRate=1e-3,Momentum=0.9,Repetitions=1,ConvergenceSteps=10,BatchSize=128,TestRepetitions=1,MaxEpochs=30,WeightDecay=1e-4,Regularization=None,Optimizer=ADAM,DropConfig=0.0+0.0+0.0+0.
+<HEADER> Factory                  : Booking method: DNN
+                         : 
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=G:WeightInitialization=XAVIERUNIFORM:Layout=TANH|100,TANH|50,TANH|10,LINEAR:TrainingStrategy=LearningRate=1e-3,Momentum=0.9,Repetitions=1,ConvergenceSteps=10,BatchSize=128,TestRepetitions=1,MaxEpochs=30,WeightDecay=1e-4,Regularization=None,Optimizer=ADAM,DropConfig=0.0+0.0+0.0+0."
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     <none>
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     Boost_num: "0" [Number of times the classifier will be boosted]
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:ErrorStrategy=CROSSENTROPY:VarTransform=G:WeightInitialization=XAVIERUNIFORM:Layout=TANH|100,TANH|50,TANH|10,LINEAR:TrainingStrategy=LearningRate=1e-3,Momentum=0.9,Repetitions=1,ConvergenceSteps=10,BatchSize=128,TestRepetitions=1,MaxEpochs=30,WeightDecay=1e-4,Regularization=None,Optimizer=ADAM,DropConfig=0.0+0.0+0.0+0."
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
+<VERBOSE>                          :     VarTransform: "G" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
+<VERBOSE>                          :     H: "False" [Print method-specific help message]
+<VERBOSE>                          :     Layout: "TANH|100,TANH|50,TANH|10,LINEAR" [Layout of the network.]
+<VERBOSE>                          :     ErrorStrategy: "CROSSENTROPY" [Loss function: Mean squared error (regression) or cross entropy (binary classification).]
+<VERBOSE>                          :     WeightInitialization: "XAVIERUNIFORM" [Weight initialization strategy]
+<VERBOSE>                          :     TrainingStrategy: "LearningRate=1e-3,Momentum=0.9,Repetitions=1,ConvergenceSteps=10,BatchSize=128,TestRepetitions=1,MaxEpochs=30,WeightDecay=1e-4,Regularization=None,Optimizer=ADAM,DropConfig=0.0+0.0+0.0+0." [Defines the training strategies.]
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     VerbosityLevel: "Default" [Verbosity level]
+<VERBOSE>                          :     CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
+<VERBOSE>                          :     IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in the training (but are included for testing and performance evaluation)]
+<VERBOSE>                          :     ValidationSize: "20%" [Part of the training data to use for validation. Specify as 0.2 or 20% to use a fifth of the data set as validation set. Specify as 100 to use exactly 100 events. (Default: 20%)]
+<VERBOSE>                          :     Architecture: "CPU" [Which architecture to perform the training on.]
+<HEADER> DNN                      : [dataset] : Create Transformation "G" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'l1Pt_1' <---> Output : variable 'l1Pt_1'
+                         : Input : variable 'l1Pt_2' <---> Output : variable 'l1Pt_2'
+                         : Input : variable 'l1DeltaEta' <---> Output : variable 'l1DeltaEta'
+                         : Input : variable 'l1DeltaPhi' <---> Output : variable 'l1DeltaPhi'
+                         : Input : variable 'l1Mass' <---> Output : variable 'l1Mass'
+                         : Preparing the Gaussian transformation...
+<HEADER> TFHandler_DNN            :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:    0.017316      1.0035   [     -3.1112      5.7307 ]
+                         :     l1Pt_2:   0.0052770     0.99935   [     -3.5190      5.4200 ]
+                         : l1DeltaEta:   0.0091196     0.93522   [     -3.2681      5.7307 ]
+                         : l1DeltaPhi:   0.0026767      1.0035   [     -3.2974      5.7307 ]
+                         :     l1Mass:    0.016474     0.99994   [     -5.7307      5.7307 ]
+                         : ---------------------------------------------------------------------
+<HEADER> Factory                  : Train all methods
+<HEADER> Factory                  : [dataset] : Create Transformation "I" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'l1Pt_1' <---> Output : variable 'l1Pt_1'
+                         : Input : variable 'l1Pt_2' <---> Output : variable 'l1Pt_2'
+                         : Input : variable 'l1DeltaEta' <---> Output : variable 'l1DeltaEta'
+                         : Input : variable 'l1DeltaPhi' <---> Output : variable 'l1DeltaPhi'
+                         : Input : variable 'l1Mass' <---> Output : variable 'l1Mass'
+<HEADER> TFHandler_Factory        :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:      56.192      48.172   [      5.5000      511.50 ]
+                         :     l1Pt_2:      39.880      32.725   [      5.5000      511.50 ]
+                         : l1DeltaEta: -0.00054050      3.0552   [     -9.3275      10.185 ]
+                         : l1DeltaPhi:    0.058695      2.8877   [     -6.1912      6.1912 ]
+                         :     l1Mass:      250.79      360.84   [  6.7171e-07      7863.8 ]
+                         : ---------------------------------------------------------------------
+                         : Ranking input variables (method unspecific)...
+<HEADER> IdTransformation         : Ranking result (top variable is best ranked)
+                         : -----------------------------------
+                         : Rank : Variable   : Separation
+                         : -----------------------------------
+                         :    1 : l1Pt_1     : 3.690e-01
+                         :    2 : l1Pt_2     : 2.367e-01
+                         :    3 : l1Mass     : 1.570e-01
+                         :    4 : l1DeltaPhi : 5.003e-02
+                         :    5 : l1DeltaEta : 3.123e-02
+                         : -----------------------------------
+<HEADER> Factory                  : Train method: BDT for Classification
+                         : 
+<HEADER> BDT                      : #events: (reweighted) sig: 183023 bkg: 183023
+                         : #events: (unweighted) sig: 364358 bkg: 1688
+                         : Training 800 Decision Trees ... patience please
+                         : Elapsed time for training with 366046 events: 263 sec         
+<HEADER> BDT                      : [dataset] : Evaluation of BDT on training sample (366046 events)
+                         : Elapsed time for evaluation of 366046 events: 31.1 sec       
+                         : Creating xml weight file: dataset/weights/TMVAClassification_BDT.weights.xml
+                         : Creating standalone class: dataset/weights/TMVAClassification_BDT.class.C
+                         : TMVA_output_VBF.root:/dataset/Method_BDT/BDT
+<HEADER> Factory                  : Training finished
+                         : 
+<HEADER> Factory                  : Train method: MLP_1 for Classification
+                         : 
+                         : 
+                         : ================================================================
+                         : H e l p   f o r   M V A   m e t h o d   [ MLP_1 ] :
+                         : 
+                         : --- Short description:
+                         : 
+                         : The MLP artificial neural network (ANN) is a traditional feed-
+                         : forward multilayer perceptron implementation. The MLP has a user-
+                         : defined hidden layer architecture, while the number of input (output)
+                         : nodes is determined by the input variables (output classes, i.e., 
+                         : signal and one background). 
+                         : 
+                         : --- Performance optimisation:
+                         : 
+                         : Neural networks are stable and performing for a large variety of 
+                         : linear and non-linear classification problems. However, in contrast
+                         : to (e.g.) boosted decision trees, the user is advised to reduce the 
+                         : number of input variables that have only little discrimination power. 
+                         : 
+                         : In the tests we have carried out so far, the MLP and ROOT networks
+                         : (TMlpANN, interfaced via TMVA) performed equally well, with however
+                         : a clear speed advantage for the MLP. The Clermont-Ferrand neural 
+                         : net (CFMlpANN) exhibited worse classification performance in these
+                         : tests, which is partly due to the slow convergence of its training
+                         : (at least 10k training cycles are required to achieve approximately
+                         : competitive results).
+                         : 
+                         : Overtraining: only the TMlpANN performs an explicit separation of the
+                         : full training sample into independent training and validation samples.
+                         : We have found that in most high-energy physics applications the 
+                         : available degrees of freedom (training events) are sufficient to 
+                         : constrain the weights of the relatively simple architectures required
+                         : to achieve good performance. Hence no overtraining should occur, and 
+                         : the use of validation samples would only reduce the available training
+                         : information. However, if the performance on the training sample is 
+                         : found to be significantly better than the one found with the inde-
+                         : pendent test sample, caution is needed. The results for these samples 
+                         : are printed to standard output at the end of each training job.
+                         : 
+                         : --- Performance tuning via configuration options:
+                         : 
+                         : The hidden layer architecture for all ANNs is defined by the option
+                         : "HiddenLayers=N+1,N,...", where here the first hidden layer has N+1
+                         : neurons and the second N neurons (and so on), and where N is the number  
+                         : of input variables. Excessive numbers of hidden layers should be avoided,
+                         : in favour of more neurons in the first hidden layer.
+                         : 
+                         : The number of cycles should be above 500. As said, if the number of
+                         : adjustable weights is small compared to the training sample size,
+                         : using a large number of training samples should not lead to overtraining.
+                         : 
+                         : <Suppress this message by specifying "!H" in the booking option>
+                         : ================================================================
+                         : 
+<HEADER> TFHandler_MLP_1          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:    -0.79964     0.19040   [     -1.0000      1.0000 ]
+                         :     l1Pt_2:    -0.86411     0.12935   [     -1.0000      1.0000 ]
+                         : l1DeltaEta:   -0.044002     0.31315   [     -1.0000      1.0000 ]
+                         : l1DeltaPhi:   0.0094804     0.46642   [     -1.0000      1.0000 ]
+                         :     l1Mass:    -0.93622    0.091774   [     -1.0000      1.0000 ]
+                         : ---------------------------------------------------------------------
+                         : Training Network
+                         : 
+                         : Inaccurate progress timing for MLP... 
+                         : Elapsed time for training with 366046 events: 1.23e+03 sec         
+<HEADER> MLP_1                    : [dataset] : Evaluation of MLP_1 on training sample (366046 events)
+                         : Elapsed time for evaluation of 366046 events: 0.824 sec       
+                         : Creating xml weight file: dataset/weights/TMVAClassification_MLP_1.weights.xml
+                         : Creating standalone class: dataset/weights/TMVAClassification_MLP_1.class.C
+                         : Write special histos to file: TMVA_output_VBF.root:/dataset/Method_MLP_1/MLP_1
+<HEADER> Factory                  : Training finished
+                         : 
+<HEADER> Factory                  : Train method: MLP_2 for Classification
+                         : 
+                         : 
+                         : ================================================================
+                         : H e l p   f o r   M V A   m e t h o d   [ MLP_2 ] :
+                         : 
+                         : --- Short description:
+                         : 
+                         : The MLP artificial neural network (ANN) is a traditional feed-
+                         : forward multilayer perceptron implementation. The MLP has a user-
+                         : defined hidden layer architecture, while the number of input (output)
+                         : nodes is determined by the input variables (output classes, i.e., 
+                         : signal and one background). 
+                         : 
+                         : --- Performance optimisation:
+                         : 
+                         : Neural networks are stable and performing for a large variety of 
+                         : linear and non-linear classification problems. However, in contrast
+                         : to (e.g.) boosted decision trees, the user is advised to reduce the 
+                         : number of input variables that have only little discrimination power. 
+                         : 
+                         : In the tests we have carried out so far, the MLP and ROOT networks
+                         : (TMlpANN, interfaced via TMVA) performed equally well, with however
+                         : a clear speed advantage for the MLP. The Clermont-Ferrand neural 
+                         : net (CFMlpANN) exhibited worse classification performance in these
+                         : tests, which is partly due to the slow convergence of its training
+                         : (at least 10k training cycles are required to achieve approximately
+                         : competitive results).
+                         : 
+                         : Overtraining: only the TMlpANN performs an explicit separation of the
+                         : full training sample into independent training and validation samples.
+                         : We have found that in most high-energy physics applications the 
+                         : available degrees of freedom (training events) are sufficient to 
+                         : constrain the weights of the relatively simple architectures required
+                         : to achieve good performance. Hence no overtraining should occur, and 
+                         : the use of validation samples would only reduce the available training
+                         : information. However, if the performance on the training sample is 
+                         : found to be significantly better than the one found with the inde-
+                         : pendent test sample, caution is needed. The results for these samples 
+                         : are printed to standard output at the end of each training job.
+                         : 
+                         : --- Performance tuning via configuration options:
+                         : 
+                         : The hidden layer architecture for all ANNs is defined by the option
+                         : "HiddenLayers=N+1,N,...", where here the first hidden layer has N+1
+                         : neurons and the second N neurons (and so on), and where N is the number  
+                         : of input variables. Excessive numbers of hidden layers should be avoided,
+                         : in favour of more neurons in the first hidden layer.
+                         : 
+                         : The number of cycles should be above 500. As said, if the number of
+                         : adjustable weights is small compared to the training sample size,
+                         : using a large number of training samples should not lead to overtraining.
+                         : 
+                         : <Suppress this message by specifying "!H" in the booking option>
+                         : ================================================================
+                         : 
+<HEADER> TFHandler_MLP_2          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:    -0.79964     0.19040   [     -1.0000      1.0000 ]
+                         :     l1Pt_2:    -0.86411     0.12935   [     -1.0000      1.0000 ]
+                         : l1DeltaEta:   -0.044002     0.31315   [     -1.0000      1.0000 ]
+                         : l1DeltaPhi:   0.0094804     0.46642   [     -1.0000      1.0000 ]
+                         :     l1Mass:    -0.93622    0.091774   [     -1.0000      1.0000 ]
+                         : ---------------------------------------------------------------------
+                         : Training Network
+                         : 
+                         : Elapsed time for training with 366046 events: 1.23e+03 sec         
+<HEADER> MLP_2                    : [dataset] : Evaluation of MLP_2 on training sample (366046 events)
+                         : Elapsed time for evaluation of 366046 events: 0.815 sec       
+                         : Creating xml weight file: dataset/weights/TMVAClassification_MLP_2.weights.xml
+                         : Creating standalone class: dataset/weights/TMVAClassification_MLP_2.class.C
+                         : Write special histos to file: TMVA_output_VBF.root:/dataset/Method_MLP_2/MLP_2
+<HEADER> Factory                  : Training finished
+                         : 
+<HEADER> Factory                  : Train method: MLP_3 for Classification
+                         : 
+                         : 
+                         : ================================================================
+                         : H e l p   f o r   M V A   m e t h o d   [ MLP_3 ] :
+                         : 
+                         : --- Short description:
+                         : 
+                         : The MLP artificial neural network (ANN) is a traditional feed-
+                         : forward multilayer perceptron implementation. The MLP has a user-
+                         : defined hidden layer architecture, while the number of input (output)
+                         : nodes is determined by the input variables (output classes, i.e., 
+                         : signal and one background). 
+                         : 
+                         : --- Performance optimisation:
+                         : 
+                         : Neural networks are stable and performing for a large variety of 
+                         : linear and non-linear classification problems. However, in contrast
+                         : to (e.g.) boosted decision trees, the user is advised to reduce the 
+                         : number of input variables that have only little discrimination power. 
+                         : 
+                         : In the tests we have carried out so far, the MLP and ROOT networks
+                         : (TMlpANN, interfaced via TMVA) performed equally well, with however
+                         : a clear speed advantage for the MLP. The Clermont-Ferrand neural 
+                         : net (CFMlpANN) exhibited worse classification performance in these
+                         : tests, which is partly due to the slow convergence of its training
+                         : (at least 10k training cycles are required to achieve approximately
+                         : competitive results).
+                         : 
+                         : Overtraining: only the TMlpANN performs an explicit separation of the
+                         : full training sample into independent training and validation samples.
+                         : We have found that in most high-energy physics applications the 
+                         : available degrees of freedom (training events) are sufficient to 
+                         : constrain the weights of the relatively simple architectures required
+                         : to achieve good performance. Hence no overtraining should occur, and 
+                         : the use of validation samples would only reduce the available training
+                         : information. However, if the performance on the training sample is 
+                         : found to be significantly better than the one found with the inde-
+                         : pendent test sample, caution is needed. The results for these samples 
+                         : are printed to standard output at the end of each training job.
+                         : 
+                         : --- Performance tuning via configuration options:
+                         : 
+                         : The hidden layer architecture for all ANNs is defined by the option
+                         : "HiddenLayers=N+1,N,...", where here the first hidden layer has N+1
+                         : neurons and the second N neurons (and so on), and where N is the number  
+                         : of input variables. Excessive numbers of hidden layers should be avoided,
+                         : in favour of more neurons in the first hidden layer.
+                         : 
+                         : The number of cycles should be above 500. As said, if the number of
+                         : adjustable weights is small compared to the training sample size,
+                         : using a large number of training samples should not lead to overtraining.
+                         : 
+                         : <Suppress this message by specifying "!H" in the booking option>
+                         : ================================================================
+                         : 
+                         : Preparing the Decorrelation transformation...
+<HEADER> TFHandler_MLP_3          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:     0.82042      1.0000   [     -4.9510      13.293 ]
+                         :     l1Pt_2:     0.78552      1.0000   [     -5.9576      20.469 ]
+                         : l1DeltaEta:    0.015780      1.0000   [     -2.8177      3.5484 ]
+                         : l1DeltaPhi:    0.029653      1.0000   [     -2.1504      2.1878 ]
+                         :     l1Mass:     0.63749      1.0000   [    -0.13123      22.039 ]
+                         : ---------------------------------------------------------------------
+                         : Training Network
+                         : 
+                         : Inaccurate progress timing for MLP... 
+                         : Elapsed time for training with 366046 events: 1.21e+03 sec         
+<HEADER> MLP_3                    : [dataset] : Evaluation of MLP_3 on training sample (366046 events)
+                         : Elapsed time for evaluation of 366046 events: 0.794 sec       
+                         : Creating xml weight file: dataset/weights/TMVAClassification_MLP_3.weights.xml
+                         : Creating standalone class: dataset/weights/TMVAClassification_MLP_3.class.C
+                         : Write special histos to file: TMVA_output_VBF.root:/dataset/Method_MLP_3/MLP_3
+<HEADER> Factory                  : Training finished
+                         : 
+<HEADER> Factory                  : Train method: DNN for Classification
+                         : 
+<HEADER> TFHandler_DNN            :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:    0.017316      1.0035   [     -3.1112      5.7307 ]
+                         :     l1Pt_2:   0.0052770     0.99935   [     -3.5190      5.4200 ]
+                         : l1DeltaEta:   0.0091196     0.93522   [     -3.2681      5.7307 ]
+                         : l1DeltaPhi:   0.0026767      1.0035   [     -3.2974      5.7307 ]
+                         :     l1Mass:    0.016474     0.99994   [     -5.7307      5.7307 ]
+                         : ---------------------------------------------------------------------
+                         : Start of neural network training on CPU.
+                         : 
+                         : Training phase 1 of 1:
+                         :      Epoch |   Train Err.  Test  Err.     GFLOP/s Conv. Steps
+                         : --------------------------------------------------------------
+                         :          1 |     0.951931    0.912991     2.97894           0
+                         :          2 |     0.943655    0.902072     2.92783           0
+                         :          3 |      0.92321    0.919846     2.96388           1
+                         :          4 |     0.923614    0.890482      2.9051           0
+                         :          5 |     0.917076    0.914045      2.8233           1
+                         :          6 |     0.944385    0.917804     2.73061           2
+                         :          7 |     0.922337    0.885364     2.68957           0
+                         :          8 |     0.920679    0.915603     2.79429           1
+                         :          9 |      0.91286    0.908383     3.05284           2
+                         :         10 |     0.919789    0.927723     2.86896           3
+                         :         11 |     0.917426    0.915909     2.94837           4
+                         :         12 |      0.89962    0.894216     2.73819           5
+                         :         13 |     0.905082     0.90409     2.82831           6
+                         :         14 |     0.931931    0.911142     2.93115           7
+                         :         15 |     0.909675    0.894647      2.8253           8
+                         :         16 |     0.903306    0.902498     2.83246           9
+                         :         17 |     0.887787    0.900686     2.53339          10
+                         : 
+                         : Elapsed time for training with 366046 events: 96.8 sec         
+<HEADER> DNN                      : [dataset] : Evaluation of DNN on training sample (366046 events)
+                         : Elapsed time for evaluation of 366046 events: 10.8 sec       
+                         : Creating xml weight file: dataset/weights/TMVAClassification_DNN.weights.xml
+                         : Creating standalone class: dataset/weights/TMVAClassification_DNN.class.C
+<HEADER> Factory                  : Training finished
+                         : 
+                         : Ranking input variables (method specific)...
+<HEADER> BDT                      : Ranking result (top variable is best ranked)
+                         : --------------------------------------------
+                         : Rank : Variable   : Variable Importance
+                         : --------------------------------------------
+                         :    1 : l1Pt_1     : 2.394e-01
+                         :    2 : l1DeltaEta : 2.231e-01
+                         :    3 : l1DeltaPhi : 2.048e-01
+                         :    4 : l1Mass     : 1.664e-01
+                         :    5 : l1Pt_2     : 1.663e-01
+                         : --------------------------------------------
+<HEADER> MLP_1                    : Ranking result (top variable is best ranked)
+                         : -----------------------------------
+                         : Rank : Variable   : Importance
+                         : -----------------------------------
+                         :    1 : l1Pt_1     : nan
+                         :    2 : l1Pt_2     : nan
+                         :    3 : l1DeltaEta : nan
+                         :    4 : l1DeltaPhi : nan
+                         :    5 : l1Mass     : nan
+                         : -----------------------------------
+<HEADER> MLP_2                    : Ranking result (top variable is best ranked)
+                         : -----------------------------------
+                         : Rank : Variable   : Importance
+                         : -----------------------------------
+                         :    1 : l1Pt_1     : nan
+                         :    2 : l1Pt_2     : nan
+                         :    3 : l1DeltaEta : nan
+                         :    4 : l1DeltaPhi : nan
+                         :    5 : l1Mass     : nan
+                         : -----------------------------------
+<HEADER> MLP_3                    : Ranking result (top variable is best ranked)
+                         : -----------------------------------
+                         : Rank : Variable   : Importance
+                         : -----------------------------------
+                         :    1 : l1Pt_1     : -nan
+                         :    2 : l1Pt_2     : -nan
+                         :    3 : l1DeltaEta : -nan
+                         :    4 : l1DeltaPhi : -nan
+                         :    5 : l1Mass     : -nan
+                         : -----------------------------------
+<HEADER> DNN                      : Ranking result (top variable is best ranked)
+                         : -----------------------------------
+                         : Rank : Variable   : Importance
+                         : -----------------------------------
+                         :    1 : l1Pt_1     : 1.000e+00
+                         :    2 : l1Pt_2     : 1.000e+00
+                         :    3 : l1DeltaEta : 1.000e+00
+                         :    4 : l1DeltaPhi : 1.000e+00
+                         :    5 : l1Mass     : 1.000e+00
+                         : -----------------------------------
+<HEADER> Factory                  : === Destroy and recreate all methods via weight files for testing ===
+                         : 
+<HEADER> MLP_1                    : Building Network. 
+                         : Initializing weights
+<HEADER> MLP_2                    : Building Network. 
+                         : Initializing weights
+<HEADER> MLP_3                    : Building Network. 
+                         : Initializing weights
+<HEADER> Factory                  : Test all methods
+<HEADER> Factory                  : Test method: BDT for Classification performance
+                         : 
+<HEADER> BDT                      : [dataset] : Evaluation of BDT on testing sample (366046 events)
+                         : Elapsed time for evaluation of 366046 events: 23.2 sec       
+<HEADER> Factory                  : Test method: MLP_1 for Classification performance
+                         : 
+<HEADER> MLP_1                    : [dataset] : Evaluation of MLP_1 on testing sample (366046 events)
+                         : Elapsed time for evaluation of 366046 events: 0.905 sec       
+<HEADER> Factory                  : Test method: MLP_2 for Classification performance
+                         : 
+<HEADER> MLP_2                    : [dataset] : Evaluation of MLP_2 on testing sample (366046 events)
+                         : Elapsed time for evaluation of 366046 events: 0.875 sec       
+<HEADER> Factory                  : Test method: MLP_3 for Classification performance
+                         : 
+<HEADER> MLP_3                    : [dataset] : Evaluation of MLP_3 on testing sample (366046 events)
+                         : Elapsed time for evaluation of 366046 events: 0.811 sec       
+<HEADER> Factory                  : Test method: DNN for Classification performance
+                         : 
+<HEADER> DNN                      : [dataset] : Evaluation of DNN on testing sample (366046 events)
+                         : Elapsed time for evaluation of 366046 events: 10.4 sec       
+<HEADER> Factory                  : Evaluate all methods
+<HEADER> Factory                  : Evaluate classifier: BDT
+                         : 
+<HEADER> BDT                      : [dataset] : Loop over test events and fill histograms with classifier response...
+                         : 
+<HEADER> TFHandler_BDT            :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:      80.016      55.468   [      5.5000      511.50 ]
+                         :     l1Pt_2:      52.930      38.448   [      5.5000      511.50 ]
+                         : l1DeltaEta:  -0.0048121      2.8989   [     -9.9500      9.3825 ]
+                         : l1DeltaPhi:  -0.0015087      2.9820   [     -6.1912      6.1912 ]
+                         :     l1Mass:      316.62      389.16   [      6.3583      7618.2 ]
+                         : ---------------------------------------------------------------------
+<HEADER> Factory                  : Evaluate classifier: MLP_1
+                         : 
+<HEADER> TFHandler_MLP_1          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:    -0.70547     0.21924   [     -1.0000      1.0000 ]
+                         :     l1Pt_2:    -0.81253     0.15197   [     -1.0000      1.0000 ]
+                         : l1DeltaEta:   -0.044439     0.29713   [     -1.0638     0.91774 ]
+                         : l1DeltaPhi: -0.00024364     0.48165   [     -1.0000      1.0000 ]
+                         :     l1Mass:    -0.91947    0.098976   [    -0.99838     0.93753 ]
+                         : ---------------------------------------------------------------------
+<HEADER> MLP_1                    : [dataset] : Loop over test events and fill histograms with classifier response...
+                         : 
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.005, fb=-0.005), refValue = 0.005
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.015, fb=-0.015), refValue = 0.015
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.025, fb=-0.025), refValue = 0.025
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.035, fb=-0.035), refValue = 0.035
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.045, fb=-0.045), refValue = 0.045
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.055, fb=-0.055), refValue = 0.055
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.065, fb=-0.065), refValue = 0.065
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.075, fb=-0.075), refValue = 0.075
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.085, fb=-0.085), refValue = 0.085
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.095, fb=-0.095), refValue = 0.095
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.105, fb=-0.105), refValue = 0.105
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.115, fb=-0.115), refValue = 0.115
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.125, fb=-0.125), refValue = 0.125
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.135, fb=-0.135), refValue = 0.135
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.145, fb=-0.145), refValue = 0.145
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.155, fb=-0.155), refValue = 0.155
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.165, fb=-0.165), refValue = 0.165
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.175, fb=-0.175), refValue = 0.175
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.185, fb=-0.185), refValue = 0.185
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.195, fb=-0.195), refValue = 0.195
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.205, fb=-0.205), refValue = 0.205
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.215, fb=-0.215), refValue = 0.215
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.225, fb=-0.225), refValue = 0.225
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.235, fb=-0.235), refValue = 0.235
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.245, fb=-0.245), refValue = 0.245
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.255, fb=-0.255), refValue = 0.255
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.265, fb=-0.265), refValue = 0.265
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.275, fb=-0.275), refValue = 0.275
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.285, fb=-0.285), refValue = 0.285
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.295, fb=-0.295), refValue = 0.295
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.305, fb=-0.305), refValue = 0.305
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.315, fb=-0.315), refValue = 0.315
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.325, fb=-0.325), refValue = 0.325
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.335, fb=-0.335), refValue = 0.335
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.345, fb=-0.345), refValue = 0.345
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.355, fb=-0.355), refValue = 0.355
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.365, fb=-0.365), refValue = 0.365
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.375, fb=-0.375), refValue = 0.375
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.385, fb=-0.385), refValue = 0.385
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.395, fb=-0.395), refValue = 0.395
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.405, fb=-0.405), refValue = 0.405
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.415, fb=-0.415), refValue = 0.415
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.425, fb=-0.425), refValue = 0.425
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.435, fb=-0.435), refValue = 0.435
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.445, fb=-0.445), refValue = 0.445
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.455, fb=-0.455), refValue = 0.455
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.465, fb=-0.465), refValue = 0.465
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.475, fb=-0.475), refValue = 0.475
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.485, fb=-0.485), refValue = 0.485
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.495, fb=-0.495), refValue = 0.495
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.505, fb=-0.505), refValue = 0.505
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.515, fb=-0.515), refValue = 0.515
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.525, fb=-0.525), refValue = 0.525
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.535, fb=-0.535), refValue = 0.535
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.545, fb=-0.545), refValue = 0.545
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.555, fb=-0.555), refValue = 0.555
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.565, fb=-0.565), refValue = 0.565
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.575, fb=-0.575), refValue = 0.575
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.585, fb=-0.585), refValue = 0.585
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.595, fb=-0.595), refValue = 0.595
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.605, fb=-0.605), refValue = 0.605
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.615, fb=-0.615), refValue = 0.615
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.625, fb=-0.625), refValue = 0.625
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.635, fb=-0.635), refValue = 0.635
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.645, fb=-0.645), refValue = 0.645
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.655, fb=-0.655), refValue = 0.655
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.665, fb=-0.665), refValue = 0.665
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.675, fb=-0.675), refValue = 0.675
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.685, fb=-0.685), refValue = 0.685
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.695, fb=-0.695), refValue = 0.695
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.705, fb=-0.705), refValue = 0.705
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.715, fb=-0.715), refValue = 0.715
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.725, fb=-0.725), refValue = 0.725
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.735, fb=-0.735), refValue = 0.735
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.745, fb=-0.745), refValue = 0.745
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.755, fb=-0.755), refValue = 0.755
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.765, fb=-0.765), refValue = 0.765
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.775, fb=-0.775), refValue = 0.775
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.785, fb=-0.785), refValue = 0.785
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.795, fb=-0.795), refValue = 0.795
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.805, fb=-0.805), refValue = 0.805
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.815, fb=-0.815), refValue = 0.815
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.825, fb=-0.825), refValue = 0.825
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.835, fb=-0.835), refValue = 0.835
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.845, fb=-0.845), refValue = 0.845
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.855, fb=-0.855), refValue = 0.855
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.865, fb=-0.865), refValue = 0.865
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.875, fb=-0.875), refValue = 0.875
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.885, fb=-0.885), refValue = 0.885
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.895, fb=-0.895), refValue = 0.895
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.905, fb=-0.905), refValue = 0.905
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.915, fb=-0.915), refValue = 0.915
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.925, fb=-0.925), refValue = 0.925
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.935, fb=-0.935), refValue = 0.935
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.945, fb=-0.945), refValue = 0.945
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.955, fb=-0.955), refValue = 0.955
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.965, fb=-0.965), refValue = 0.965
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.975, fb=-0.975), refValue = 0.975
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.985, fb=-0.985), refValue = 0.985
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.995, fb=-0.995), refValue = 0.995
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.9999, fb=-0.9999), refValue = 0.9999
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.005, fb=-0.005), refValue = 0.005
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.015, fb=-0.015), refValue = 0.015
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.025, fb=-0.025), refValue = 0.025
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.035, fb=-0.035), refValue = 0.035
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.045, fb=-0.045), refValue = 0.045
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.055, fb=-0.055), refValue = 0.055
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.065, fb=-0.065), refValue = 0.065
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.075, fb=-0.075), refValue = 0.075
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.085, fb=-0.085), refValue = 0.085
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.095, fb=-0.095), refValue = 0.095
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.105, fb=-0.105), refValue = 0.105
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.115, fb=-0.115), refValue = 0.115
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.125, fb=-0.125), refValue = 0.125
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.135, fb=-0.135), refValue = 0.135
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.145, fb=-0.145), refValue = 0.145
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.155, fb=-0.155), refValue = 0.155
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.165, fb=-0.165), refValue = 0.165
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.175, fb=-0.175), refValue = 0.175
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.185, fb=-0.185), refValue = 0.185
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.195, fb=-0.195), refValue = 0.195
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.205, fb=-0.205), refValue = 0.205
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.215, fb=-0.215), refValue = 0.215
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.225, fb=-0.225), refValue = 0.225
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.235, fb=-0.235), refValue = 0.235
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.245, fb=-0.245), refValue = 0.245
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.255, fb=-0.255), refValue = 0.255
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.265, fb=-0.265), refValue = 0.265
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.275, fb=-0.275), refValue = 0.275
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.285, fb=-0.285), refValue = 0.285
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.295, fb=-0.295), refValue = 0.295
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.305, fb=-0.305), refValue = 0.305
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.315, fb=-0.315), refValue = 0.315
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.325, fb=-0.325), refValue = 0.325
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.335, fb=-0.335), refValue = 0.335
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.345, fb=-0.345), refValue = 0.345
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.355, fb=-0.355), refValue = 0.355
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.365, fb=-0.365), refValue = 0.365
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.375, fb=-0.375), refValue = 0.375
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.385, fb=-0.385), refValue = 0.385
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.395, fb=-0.395), refValue = 0.395
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.405, fb=-0.405), refValue = 0.405
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.415, fb=-0.415), refValue = 0.415
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.425, fb=-0.425), refValue = 0.425
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.435, fb=-0.435), refValue = 0.435
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.445, fb=-0.445), refValue = 0.445
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.455, fb=-0.455), refValue = 0.455
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.465, fb=-0.465), refValue = 0.465
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.475, fb=-0.475), refValue = 0.475
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.485, fb=-0.485), refValue = 0.485
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.495, fb=-0.495), refValue = 0.495
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.505, fb=-0.505), refValue = 0.505
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.515, fb=-0.515), refValue = 0.515
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.525, fb=-0.525), refValue = 0.525
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.535, fb=-0.535), refValue = 0.535
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.545, fb=-0.545), refValue = 0.545
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.555, fb=-0.555), refValue = 0.555
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.565, fb=-0.565), refValue = 0.565
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.575, fb=-0.575), refValue = 0.575
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.585, fb=-0.585), refValue = 0.585
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.595, fb=-0.595), refValue = 0.595
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.605, fb=-0.605), refValue = 0.605
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.615, fb=-0.615), refValue = 0.615
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.625, fb=-0.625), refValue = 0.625
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.635, fb=-0.635), refValue = 0.635
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.645, fb=-0.645), refValue = 0.645
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.655, fb=-0.655), refValue = 0.655
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.665, fb=-0.665), refValue = 0.665
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.675, fb=-0.675), refValue = 0.675
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.685, fb=-0.685), refValue = 0.685
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.695, fb=-0.695), refValue = 0.695
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.705, fb=-0.705), refValue = 0.705
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.715, fb=-0.715), refValue = 0.715
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.725, fb=-0.725), refValue = 0.725
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.735, fb=-0.735), refValue = 0.735
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.745, fb=-0.745), refValue = 0.745
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.755, fb=-0.755), refValue = 0.755
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.765, fb=-0.765), refValue = 0.765
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.775, fb=-0.775), refValue = 0.775
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.785, fb=-0.785), refValue = 0.785
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.795, fb=-0.795), refValue = 0.795
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.805, fb=-0.805), refValue = 0.805
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.815, fb=-0.815), refValue = 0.815
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.825, fb=-0.825), refValue = 0.825
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.835, fb=-0.835), refValue = 0.835
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.845, fb=-0.845), refValue = 0.845
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.855, fb=-0.855), refValue = 0.855
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.865, fb=-0.865), refValue = 0.865
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.875, fb=-0.875), refValue = 0.875
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.885, fb=-0.885), refValue = 0.885
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.895, fb=-0.895), refValue = 0.895
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.905, fb=-0.905), refValue = 0.905
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.915, fb=-0.915), refValue = 0.915
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.925, fb=-0.925), refValue = 0.925
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.935, fb=-0.935), refValue = 0.935
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.945, fb=-0.945), refValue = 0.945
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.955, fb=-0.955), refValue = 0.955
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.965, fb=-0.965), refValue = 0.965
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.975, fb=-0.975), refValue = 0.975
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.985, fb=-0.985), refValue = 0.985
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.995, fb=-0.995), refValue = 0.995
+<HEADER> TFHandler_MLP_1          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:    -0.70547     0.21924   [     -1.0000      1.0000 ]
+                         :     l1Pt_2:    -0.81253     0.15197   [     -1.0000      1.0000 ]
+                         : l1DeltaEta:   -0.044439     0.29713   [     -1.0638     0.91774 ]
+                         : l1DeltaPhi: -0.00024364     0.48165   [     -1.0000      1.0000 ]
+                         :     l1Mass:    -0.91947    0.098976   [    -0.99838     0.93753 ]
+                         : ---------------------------------------------------------------------
+<HEADER> Factory                  : Evaluate classifier: MLP_2
+                         : 
+<HEADER> TFHandler_MLP_2          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:    -0.70547     0.21924   [     -1.0000      1.0000 ]
+                         :     l1Pt_2:    -0.81253     0.15197   [     -1.0000      1.0000 ]
+                         : l1DeltaEta:   -0.044439     0.29713   [     -1.0638     0.91774 ]
+                         : l1DeltaPhi: -0.00024364     0.48165   [     -1.0000      1.0000 ]
+                         :     l1Mass:    -0.91947    0.098976   [    -0.99838     0.93753 ]
+                         : ---------------------------------------------------------------------
+<HEADER> MLP_2                    : [dataset] : Loop over test events and fill histograms with classifier response...
+                         : 
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.005, fb=-0.005), refValue = 0.005
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.015, fb=-0.015), refValue = 0.015
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.025, fb=-0.025), refValue = 0.025
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.035, fb=-0.035), refValue = 0.035
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.045, fb=-0.045), refValue = 0.045
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.055, fb=-0.055), refValue = 0.055
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.065, fb=-0.065), refValue = 0.065
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.075, fb=-0.075), refValue = 0.075
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.085, fb=-0.085), refValue = 0.085
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.095, fb=-0.095), refValue = 0.095
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.105, fb=-0.105), refValue = 0.105
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.115, fb=-0.115), refValue = 0.115
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.125, fb=-0.125), refValue = 0.125
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.135, fb=-0.135), refValue = 0.135
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.145, fb=-0.145), refValue = 0.145
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.155, fb=-0.155), refValue = 0.155
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.165, fb=-0.165), refValue = 0.165
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.175, fb=-0.175), refValue = 0.175
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.185, fb=-0.185), refValue = 0.185
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.195, fb=-0.195), refValue = 0.195
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.205, fb=-0.205), refValue = 0.205
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.215, fb=-0.215), refValue = 0.215
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.225, fb=-0.225), refValue = 0.225
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.235, fb=-0.235), refValue = 0.235
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.245, fb=-0.245), refValue = 0.245
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.255, fb=-0.255), refValue = 0.255
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.265, fb=-0.265), refValue = 0.265
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.275, fb=-0.275), refValue = 0.275
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.285, fb=-0.285), refValue = 0.285
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.295, fb=-0.295), refValue = 0.295
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.305, fb=-0.305), refValue = 0.305
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.315, fb=-0.315), refValue = 0.315
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.325, fb=-0.325), refValue = 0.325
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.335, fb=-0.335), refValue = 0.335
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.345, fb=-0.345), refValue = 0.345
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.355, fb=-0.355), refValue = 0.355
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.365, fb=-0.365), refValue = 0.365
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.375, fb=-0.375), refValue = 0.375
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.385, fb=-0.385), refValue = 0.385
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.395, fb=-0.395), refValue = 0.395
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.405, fb=-0.405), refValue = 0.405
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.415, fb=-0.415), refValue = 0.415
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.425, fb=-0.425), refValue = 0.425
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.435, fb=-0.435), refValue = 0.435
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.445, fb=-0.445), refValue = 0.445
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.455, fb=-0.455), refValue = 0.455
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.465, fb=-0.465), refValue = 0.465
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.475, fb=-0.475), refValue = 0.475
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.485, fb=-0.485), refValue = 0.485
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.495, fb=-0.495), refValue = 0.495
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.505, fb=-0.505), refValue = 0.505
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.515, fb=-0.515), refValue = 0.515
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.525, fb=-0.525), refValue = 0.525
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.535, fb=-0.535), refValue = 0.535
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.545, fb=-0.545), refValue = 0.545
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.555, fb=-0.555), refValue = 0.555
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.565, fb=-0.565), refValue = 0.565
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.575, fb=-0.575), refValue = 0.575
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.585, fb=-0.585), refValue = 0.585
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.595, fb=-0.595), refValue = 0.595
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.605, fb=-0.605), refValue = 0.605
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.615, fb=-0.615), refValue = 0.615
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.625, fb=-0.625), refValue = 0.625
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.635, fb=-0.635), refValue = 0.635
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.645, fb=-0.645), refValue = 0.645
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.655, fb=-0.655), refValue = 0.655
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.665, fb=-0.665), refValue = 0.665
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.675, fb=-0.675), refValue = 0.675
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.685, fb=-0.685), refValue = 0.685
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.695, fb=-0.695), refValue = 0.695
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.705, fb=-0.705), refValue = 0.705
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.715, fb=-0.715), refValue = 0.715
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.725, fb=-0.725), refValue = 0.725
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.735, fb=-0.735), refValue = 0.735
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.745, fb=-0.745), refValue = 0.745
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.755, fb=-0.755), refValue = 0.755
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.765, fb=-0.765), refValue = 0.765
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.775, fb=-0.775), refValue = 0.775
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.785, fb=-0.785), refValue = 0.785
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.795, fb=-0.795), refValue = 0.795
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.805, fb=-0.805), refValue = 0.805
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.815, fb=-0.815), refValue = 0.815
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.825, fb=-0.825), refValue = 0.825
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.835, fb=-0.835), refValue = 0.835
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.845, fb=-0.845), refValue = 0.845
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.855, fb=-0.855), refValue = 0.855
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.865, fb=-0.865), refValue = 0.865
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.875, fb=-0.875), refValue = 0.875
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.885, fb=-0.885), refValue = 0.885
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.895, fb=-0.895), refValue = 0.895
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.905, fb=-0.905), refValue = 0.905
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.915, fb=-0.915), refValue = 0.915
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.925, fb=-0.925), refValue = 0.925
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.935, fb=-0.935), refValue = 0.935
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.945, fb=-0.945), refValue = 0.945
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.955, fb=-0.955), refValue = 0.955
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.965, fb=-0.965), refValue = 0.965
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.975, fb=-0.975), refValue = 0.975
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.985, fb=-0.985), refValue = 0.985
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.995, fb=-0.995), refValue = 0.995
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.9999, fb=-0.9999), refValue = 0.9999
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.005, fb=-0.005), refValue = 0.005
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.015, fb=-0.015), refValue = 0.015
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.025, fb=-0.025), refValue = 0.025
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.035, fb=-0.035), refValue = 0.035
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.045, fb=-0.045), refValue = 0.045
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.055, fb=-0.055), refValue = 0.055
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.065, fb=-0.065), refValue = 0.065
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.075, fb=-0.075), refValue = 0.075
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.085, fb=-0.085), refValue = 0.085
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.095, fb=-0.095), refValue = 0.095
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.105, fb=-0.105), refValue = 0.105
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.115, fb=-0.115), refValue = 0.115
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.125, fb=-0.125), refValue = 0.125
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.135, fb=-0.135), refValue = 0.135
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.145, fb=-0.145), refValue = 0.145
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.155, fb=-0.155), refValue = 0.155
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.165, fb=-0.165), refValue = 0.165
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.175, fb=-0.175), refValue = 0.175
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.185, fb=-0.185), refValue = 0.185
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.195, fb=-0.195), refValue = 0.195
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.205, fb=-0.205), refValue = 0.205
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.215, fb=-0.215), refValue = 0.215
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.225, fb=-0.225), refValue = 0.225
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.235, fb=-0.235), refValue = 0.235
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.245, fb=-0.245), refValue = 0.245
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.255, fb=-0.255), refValue = 0.255
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.265, fb=-0.265), refValue = 0.265
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.275, fb=-0.275), refValue = 0.275
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.285, fb=-0.285), refValue = 0.285
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.295, fb=-0.295), refValue = 0.295
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.305, fb=-0.305), refValue = 0.305
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.315, fb=-0.315), refValue = 0.315
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.325, fb=-0.325), refValue = 0.325
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.335, fb=-0.335), refValue = 0.335
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.345, fb=-0.345), refValue = 0.345
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.355, fb=-0.355), refValue = 0.355
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.365, fb=-0.365), refValue = 0.365
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.375, fb=-0.375), refValue = 0.375
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.385, fb=-0.385), refValue = 0.385
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.395, fb=-0.395), refValue = 0.395
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.405, fb=-0.405), refValue = 0.405
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.415, fb=-0.415), refValue = 0.415
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.425, fb=-0.425), refValue = 0.425
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.435, fb=-0.435), refValue = 0.435
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.445, fb=-0.445), refValue = 0.445
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.455, fb=-0.455), refValue = 0.455
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.465, fb=-0.465), refValue = 0.465
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.475, fb=-0.475), refValue = 0.475
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.485, fb=-0.485), refValue = 0.485
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.495, fb=-0.495), refValue = 0.495
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.505, fb=-0.505), refValue = 0.505
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.515, fb=-0.515), refValue = 0.515
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.525, fb=-0.525), refValue = 0.525
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.535, fb=-0.535), refValue = 0.535
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.545, fb=-0.545), refValue = 0.545
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.555, fb=-0.555), refValue = 0.555
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.565, fb=-0.565), refValue = 0.565
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.575, fb=-0.575), refValue = 0.575
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.585, fb=-0.585), refValue = 0.585
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.595, fb=-0.595), refValue = 0.595
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.605, fb=-0.605), refValue = 0.605
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.615, fb=-0.615), refValue = 0.615
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.625, fb=-0.625), refValue = 0.625
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.635, fb=-0.635), refValue = 0.635
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.645, fb=-0.645), refValue = 0.645
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.655, fb=-0.655), refValue = 0.655
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.665, fb=-0.665), refValue = 0.665
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.675, fb=-0.675), refValue = 0.675
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.685, fb=-0.685), refValue = 0.685
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.695, fb=-0.695), refValue = 0.695
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.705, fb=-0.705), refValue = 0.705
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.715, fb=-0.715), refValue = 0.715
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.725, fb=-0.725), refValue = 0.725
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.735, fb=-0.735), refValue = 0.735
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.745, fb=-0.745), refValue = 0.745
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.755, fb=-0.755), refValue = 0.755
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.765, fb=-0.765), refValue = 0.765
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.775, fb=-0.775), refValue = 0.775
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.785, fb=-0.785), refValue = 0.785
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.795, fb=-0.795), refValue = 0.795
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.805, fb=-0.805), refValue = 0.805
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.815, fb=-0.815), refValue = 0.815
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.825, fb=-0.825), refValue = 0.825
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.835, fb=-0.835), refValue = 0.835
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.845, fb=-0.845), refValue = 0.845
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.855, fb=-0.855), refValue = 0.855
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.865, fb=-0.865), refValue = 0.865
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.875, fb=-0.875), refValue = 0.875
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.885, fb=-0.885), refValue = 0.885
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.895, fb=-0.895), refValue = 0.895
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.905, fb=-0.905), refValue = 0.905
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.915, fb=-0.915), refValue = 0.915
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.925, fb=-0.925), refValue = 0.925
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.935, fb=-0.935), refValue = 0.935
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.945, fb=-0.945), refValue = 0.945
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.955, fb=-0.955), refValue = 0.955
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.965, fb=-0.965), refValue = 0.965
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.975, fb=-0.975), refValue = 0.975
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.985, fb=-0.985), refValue = 0.985
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.995, fb=-0.995), refValue = 0.995
+<HEADER> TFHandler_MLP_2          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:    -0.70547     0.21924   [     -1.0000      1.0000 ]
+                         :     l1Pt_2:    -0.81253     0.15197   [     -1.0000      1.0000 ]
+                         : l1DeltaEta:   -0.044439     0.29713   [     -1.0638     0.91774 ]
+                         : l1DeltaPhi: -0.00024364     0.48165   [     -1.0000      1.0000 ]
+                         :     l1Mass:    -0.91947    0.098976   [    -0.99838     0.93753 ]
+                         : ---------------------------------------------------------------------
+<HEADER> Factory                  : Evaluate classifier: MLP_3
+                         : 
+<HEADER> TFHandler_MLP_3          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:      1.2494      1.1764   [     -3.8520      13.512 ]
+                         :     l1Pt_2:     0.98331      1.2231   [     -6.2895      19.952 ]
+                         : l1DeltaEta:    0.016681     0.95020   [     -3.0401      3.5484 ]
+                         : l1DeltaPhi:    0.010966      1.0330   [     -2.1650      2.2028 ]
+                         :     l1Mass:     0.79608      1.0781   [    -0.11148      21.381 ]
+                         : ---------------------------------------------------------------------
+<HEADER> MLP_3                    : [dataset] : Loop over test events and fill histograms with classifier response...
+                         : 
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.005, fb=-0.005), refValue = 0.005
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.015, fb=-0.015), refValue = 0.015
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.025, fb=-0.025), refValue = 0.025
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.035, fb=-0.035), refValue = 0.035
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.045, fb=-0.045), refValue = 0.045
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.055, fb=-0.055), refValue = 0.055
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.065, fb=-0.065), refValue = 0.065
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.075, fb=-0.075), refValue = 0.075
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.085, fb=-0.085), refValue = 0.085
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.095, fb=-0.095), refValue = 0.095
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.105, fb=-0.105), refValue = 0.105
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.115, fb=-0.115), refValue = 0.115
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.125, fb=-0.125), refValue = 0.125
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.135, fb=-0.135), refValue = 0.135
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.145, fb=-0.145), refValue = 0.145
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.155, fb=-0.155), refValue = 0.155
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.165, fb=-0.165), refValue = 0.165
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.175, fb=-0.175), refValue = 0.175
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.185, fb=-0.185), refValue = 0.185
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.195, fb=-0.195), refValue = 0.195
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.205, fb=-0.205), refValue = 0.205
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.215, fb=-0.215), refValue = 0.215
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.225, fb=-0.225), refValue = 0.225
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.235, fb=-0.235), refValue = 0.235
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.245, fb=-0.245), refValue = 0.245
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.255, fb=-0.255), refValue = 0.255
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.265, fb=-0.265), refValue = 0.265
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.275, fb=-0.275), refValue = 0.275
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.285, fb=-0.285), refValue = 0.285
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.295, fb=-0.295), refValue = 0.295
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.305, fb=-0.305), refValue = 0.305
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.315, fb=-0.315), refValue = 0.315
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.325, fb=-0.325), refValue = 0.325
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.335, fb=-0.335), refValue = 0.335
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.345, fb=-0.345), refValue = 0.345
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.355, fb=-0.355), refValue = 0.355
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.365, fb=-0.365), refValue = 0.365
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.375, fb=-0.375), refValue = 0.375
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.385, fb=-0.385), refValue = 0.385
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.395, fb=-0.395), refValue = 0.395
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.405, fb=-0.405), refValue = 0.405
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.415, fb=-0.415), refValue = 0.415
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.425, fb=-0.425), refValue = 0.425
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.435, fb=-0.435), refValue = 0.435
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.445, fb=-0.445), refValue = 0.445
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.455, fb=-0.455), refValue = 0.455
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.465, fb=-0.465), refValue = 0.465
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.475, fb=-0.475), refValue = 0.475
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.485, fb=-0.485), refValue = 0.485
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.495, fb=-0.495), refValue = 0.495
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.505, fb=-0.505), refValue = 0.505
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.515, fb=-0.515), refValue = 0.515
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.525, fb=-0.525), refValue = 0.525
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.535, fb=-0.535), refValue = 0.535
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.545, fb=-0.545), refValue = 0.545
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.555, fb=-0.555), refValue = 0.555
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.565, fb=-0.565), refValue = 0.565
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.575, fb=-0.575), refValue = 0.575
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.585, fb=-0.585), refValue = 0.585
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.595, fb=-0.595), refValue = 0.595
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.605, fb=-0.605), refValue = 0.605
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.615, fb=-0.615), refValue = 0.615
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.625, fb=-0.625), refValue = 0.625
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.635, fb=-0.635), refValue = 0.635
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.645, fb=-0.645), refValue = 0.645
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.655, fb=-0.655), refValue = 0.655
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.665, fb=-0.665), refValue = 0.665
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.675, fb=-0.675), refValue = 0.675
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.685, fb=-0.685), refValue = 0.685
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.695, fb=-0.695), refValue = 0.695
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.705, fb=-0.705), refValue = 0.705
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.715, fb=-0.715), refValue = 0.715
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.725, fb=-0.725), refValue = 0.725
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.735, fb=-0.735), refValue = 0.735
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.745, fb=-0.745), refValue = 0.745
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.755, fb=-0.755), refValue = 0.755
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.765, fb=-0.765), refValue = 0.765
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.775, fb=-0.775), refValue = 0.775
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.785, fb=-0.785), refValue = 0.785
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.795, fb=-0.795), refValue = 0.795
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.805, fb=-0.805), refValue = 0.805
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.815, fb=-0.815), refValue = 0.815
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.825, fb=-0.825), refValue = 0.825
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.835, fb=-0.835), refValue = 0.835
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.845, fb=-0.845), refValue = 0.845
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.855, fb=-0.855), refValue = 0.855
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.865, fb=-0.865), refValue = 0.865
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.875, fb=-0.875), refValue = 0.875
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.885, fb=-0.885), refValue = 0.885
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.895, fb=-0.895), refValue = 0.895
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.905, fb=-0.905), refValue = 0.905
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.915, fb=-0.915), refValue = 0.915
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.925, fb=-0.925), refValue = 0.925
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.935, fb=-0.935), refValue = 0.935
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.945, fb=-0.945), refValue = 0.945
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.955, fb=-0.955), refValue = 0.955
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.965, fb=-0.965), refValue = 0.965
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.975, fb=-0.975), refValue = 0.975
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.985, fb=-0.985), refValue = 0.985
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.995, fb=-0.995), refValue = 0.995
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.9999, fb=-0.9999), refValue = 0.9999
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.005, fb=-0.005), refValue = 0.005
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.015, fb=-0.015), refValue = 0.015
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.025, fb=-0.025), refValue = 0.025
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.035, fb=-0.035), refValue = 0.035
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.045, fb=-0.045), refValue = 0.045
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.055, fb=-0.055), refValue = 0.055
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.065, fb=-0.065), refValue = 0.065
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.075, fb=-0.075), refValue = 0.075
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.085, fb=-0.085), refValue = 0.085
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.095, fb=-0.095), refValue = 0.095
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.105, fb=-0.105), refValue = 0.105
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.115, fb=-0.115), refValue = 0.115
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.125, fb=-0.125), refValue = 0.125
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.135, fb=-0.135), refValue = 0.135
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.145, fb=-0.145), refValue = 0.145
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.155, fb=-0.155), refValue = 0.155
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.165, fb=-0.165), refValue = 0.165
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.175, fb=-0.175), refValue = 0.175
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.185, fb=-0.185), refValue = 0.185
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.195, fb=-0.195), refValue = 0.195
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.205, fb=-0.205), refValue = 0.205
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.215, fb=-0.215), refValue = 0.215
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.225, fb=-0.225), refValue = 0.225
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.235, fb=-0.235), refValue = 0.235
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.245, fb=-0.245), refValue = 0.245
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.255, fb=-0.255), refValue = 0.255
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.265, fb=-0.265), refValue = 0.265
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.275, fb=-0.275), refValue = 0.275
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.285, fb=-0.285), refValue = 0.285
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.295, fb=-0.295), refValue = 0.295
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.305, fb=-0.305), refValue = 0.305
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.315, fb=-0.315), refValue = 0.315
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.325, fb=-0.325), refValue = 0.325
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.335, fb=-0.335), refValue = 0.335
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.345, fb=-0.345), refValue = 0.345
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.355, fb=-0.355), refValue = 0.355
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.365, fb=-0.365), refValue = 0.365
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.375, fb=-0.375), refValue = 0.375
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.385, fb=-0.385), refValue = 0.385
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.395, fb=-0.395), refValue = 0.395
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.405, fb=-0.405), refValue = 0.405
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.415, fb=-0.415), refValue = 0.415
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.425, fb=-0.425), refValue = 0.425
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.435, fb=-0.435), refValue = 0.435
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.445, fb=-0.445), refValue = 0.445
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.455, fb=-0.455), refValue = 0.455
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.465, fb=-0.465), refValue = 0.465
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.475, fb=-0.475), refValue = 0.475
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.485, fb=-0.485), refValue = 0.485
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.495, fb=-0.495), refValue = 0.495
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.505, fb=-0.505), refValue = 0.505
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.515, fb=-0.515), refValue = 0.515
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.525, fb=-0.525), refValue = 0.525
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.535, fb=-0.535), refValue = 0.535
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.545, fb=-0.545), refValue = 0.545
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.555, fb=-0.555), refValue = 0.555
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.565, fb=-0.565), refValue = 0.565
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.575, fb=-0.575), refValue = 0.575
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.585, fb=-0.585), refValue = 0.585
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.595, fb=-0.595), refValue = 0.595
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.605, fb=-0.605), refValue = 0.605
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.615, fb=-0.615), refValue = 0.615
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.625, fb=-0.625), refValue = 0.625
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.635, fb=-0.635), refValue = 0.635
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.645, fb=-0.645), refValue = 0.645
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.655, fb=-0.655), refValue = 0.655
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.665, fb=-0.665), refValue = 0.665
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.675, fb=-0.675), refValue = 0.675
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.685, fb=-0.685), refValue = 0.685
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.695, fb=-0.695), refValue = 0.695
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.705, fb=-0.705), refValue = 0.705
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.715, fb=-0.715), refValue = 0.715
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.725, fb=-0.725), refValue = 0.725
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.735, fb=-0.735), refValue = 0.735
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.745, fb=-0.745), refValue = 0.745
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.755, fb=-0.755), refValue = 0.755
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.765, fb=-0.765), refValue = 0.765
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.775, fb=-0.775), refValue = 0.775
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.785, fb=-0.785), refValue = 0.785
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.795, fb=-0.795), refValue = 0.795
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.805, fb=-0.805), refValue = 0.805
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.815, fb=-0.815), refValue = 0.815
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.825, fb=-0.825), refValue = 0.825
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.835, fb=-0.835), refValue = 0.835
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.845, fb=-0.845), refValue = 0.845
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.855, fb=-0.855), refValue = 0.855
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.865, fb=-0.865), refValue = 0.865
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.875, fb=-0.875), refValue = 0.875
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.885, fb=-0.885), refValue = 0.885
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.895, fb=-0.895), refValue = 0.895
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.905, fb=-0.905), refValue = 0.905
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.915, fb=-0.915), refValue = 0.915
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.925, fb=-0.925), refValue = 0.925
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.935, fb=-0.935), refValue = 0.935
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.945, fb=-0.945), refValue = 0.945
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.955, fb=-0.955), refValue = 0.955
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.965, fb=-0.965), refValue = 0.965
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.975, fb=-0.975), refValue = 0.975
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.985, fb=-0.985), refValue = 0.985
+<WARNING> <WARNING>                : <Root> initial interval w/o root: (a=0.5, b=0.5), (Eff_a=0, Eff_b=0), (fa=-0.995, fb=-0.995), refValue = 0.995
+<HEADER> TFHandler_MLP_3          :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:      1.2494      1.1764   [     -3.8520      13.512 ]
+                         :     l1Pt_2:     0.98331      1.2231   [     -6.2895      19.952 ]
+                         : l1DeltaEta:    0.016681     0.95020   [     -3.0401      3.5484 ]
+                         : l1DeltaPhi:    0.010966      1.0330   [     -2.1650      2.2028 ]
+                         :     l1Mass:     0.79608      1.0781   [    -0.11148      21.381 ]
+                         : ---------------------------------------------------------------------
+<HEADER> Factory                  : Evaluate classifier: DNN
+                         : 
+<HEADER> TFHandler_DNN            :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:     0.60376     0.82603   [     -3.1112      5.7307 ]
+                         :     l1Pt_2:     0.47744     0.88460   [     -3.5190      5.4200 ]
+                         : l1DeltaEta:    0.011745     0.86774   [     -5.7307      3.7188 ]
+                         : l1DeltaPhi:   -0.020058      1.0285   [     -3.2974      5.7307 ]
+                         :     l1Mass:     0.38859     0.81447   [     -3.2463      5.7307 ]
+                         : ---------------------------------------------------------------------
+<HEADER> DNN                      : [dataset] : Loop over test events and fill histograms with classifier response...
+                         : 
+<HEADER> TFHandler_DNN            :   Variable          Mean          RMS   [        Min          Max ]
+                         : ---------------------------------------------------------------------
+                         :     l1Pt_1:     0.60376     0.82603   [     -3.1112      5.7307 ]
+                         :     l1Pt_2:     0.47744     0.88460   [     -3.5190      5.4200 ]
+                         : l1DeltaEta:    0.011745     0.86774   [     -5.7307      3.7188 ]
+                         : l1DeltaPhi:   -0.020058      1.0285   [     -3.2974      5.7307 ]
+                         :     l1Mass:     0.38859     0.81447   [     -3.2463      5.7307 ]
+                         : ---------------------------------------------------------------------
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : dataset       DNN            : 0.869
+                         : dataset       BDT            : 0.867
+                         : dataset       MLP_1          : 0.491
+                         : dataset       MLP_2          : 0.491
+                         : dataset       MLP_3          : 0.491
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : dataset              DNN            : 0.234 (0.271)       0.613 (0.600)      0.852 (0.862)
+                         : dataset              BDT            : 0.214 (0.412)       0.600 (0.689)      0.862 (0.885)
+                         : dataset              MLP_1          : 0.000 (0.000)       0.000 (0.000)      0.000 (0.000)
+                         : dataset              MLP_2          : 0.000 (0.000)       0.000 (0.000)      0.000 (0.000)
+                         : dataset              MLP_3          : 0.000 (0.000)       0.000 (0.000)      0.000 (0.000)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+<HEADER> Dataset:dataset          : Created tree 'TestTree' with 366046 events
+                         : 
+<HEADER> Dataset:dataset          : Created tree 'TrainTree' with 366046 events
+                         : 
+<HEADER> Factory                  : Thank you for using TMVA!
+                         : For citation information, please visit: http://tmva.sf.net/citeTMVA.html

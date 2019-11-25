@@ -3,12 +3,12 @@
   <GeneralInfo>
     <Info name="TMVA Release" value="4.2.1 [262657]"/>
     <Info name="ROOT Release" value="6.12/07 [396295]"/>
-    <Info name="Creator" value="addropul"/>
-    <Info name="Date" value="Tue Aug 27 20:56:40 2019"/>
+    <Info name="Creator" value="nicooper"/>
+    <Info name="Date" value="Fri Nov 22 13:39:07 2019"/>
     <Info name="Host" value="Linux cmsbuild89.cern.ch 2.6.32-696.30.1.el6.x86_64 #1 SMP Tue May 22 06:09:36 CEST 2018 x86_64 x86_64 x86_64 GNU/Linux"/>
-    <Info name="Dir" value="/afs/cern.ch/user/a/addropul/CMSSW_10_6_0_pre4/src/L1Trigger/Run3Ntuplizer/test/June_July_2019"/>
-    <Info name="Training events" value="370753"/>
-    <Info name="TrainingTime" value="1.26843534e+02"/>
+    <Info name="Dir" value="/afs/cern.ch/user/n/nicooper/forNico/adrifork/June_July_2019"/>
+    <Info name="Training events" value="366046"/>
+    <Info name="TrainingTime" value="1.23261943e+03"/>
     <Info name="AnalysisType" value="Classification"/>
   </GeneralInfo>
   <Options>
@@ -86,11 +86,11 @@
       </Class>
       <Class ClassIndex="1">
         <Ranges>
-          <Range Index="0" Min="6.0000000000000000e+00" Max="4.7250000000000000e+02"/>
-          <Range Index="1" Min="5.5000000000000000e+00" Max="5.1150000000000000e+02"/>
-          <Range Index="2" Min="-8.2399997711181641e+00" Max="8.7600002288818359e+00"/>
-          <Range Index="3" Min="-5.9295997619628906e+00" Max="6.0167999267578125e+00"/>
-          <Range Index="4" Min="8.6679096221923828e+00" Max="3.0111108398437500e+03"/>
+          <Range Index="0" Min="5.5000000000000000e+00" Max="1.5200000000000000e+02"/>
+          <Range Index="1" Min="5.5000000000000000e+00" Max="1.9850000000000000e+02"/>
+          <Range Index="2" Min="-8.4099998474121094e+00" Max="8.2399997711181641e+00"/>
+          <Range Index="3" Min="-5.9295997619628906e+00" Max="5.7551999092102051e+00"/>
+          <Range Index="4" Min="7.7600577697012341e-07" Max="3.4573596191406250e+03"/>
         </Ranges>
       </Class>
       <Class ClassIndex="2">
@@ -109,57 +109,57 @@
     <Layout NLayers="3">
       <Layer Index="0" NNeurons="6">
         <Neuron NSynapses="10">
-          -2.8595074554496168e+01 4.5841898178357354e+01 1.0532677618755125e+01 9.1277838614713474e+01 -7.2439343119758703e+01 -3.2308549549027127e+01 1.0897672622355300e+01 -4.4145015534968106e+00 8.4648688319014698e-01 -7.5571899975095960e+00 
+          -nan -nan nan -nan -nan nan nan -nan nan nan 
         </Neuron>
         <Neuron NSynapses="10">
-          -3.0440767558359094e+00 4.4018199245836920e+00 1.0849254108887905e+01 1.0005535406158510e+01 5.3399081284731773e+00 -8.3860768696893420e+00 3.3000720948494395e+00 3.1022140528152811e+00 3.0992283204134354e+00 -9.3224534934062735e+00 
+          -nan -nan nan -nan -nan nan nan -nan nan nan 
         </Neuron>
         <Neuron NSynapses="10">
-          9.2652842826203574e-01 -2.4899595245560966e+00 2.9444650345643073e+01 -1.0249228802524242e+02 -1.0552080843934391e+02 -1.0634557368012997e+01 4.3728885465276171e+01 -3.4955854028003415e+01 -3.8894431892842569e+01 3.6005911818772200e+00 
+          -nan -nan nan -nan -nan nan nan -nan nan nan 
         </Neuron>
         <Neuron NSynapses="10">
-          -3.2742592664433744e+01 2.0534133645880392e+01 -3.6173230095524282e+01 2.6713746346191170e+00 2.8948537103522010e+00 8.0151538529895960e-01 -4.1436559345736697e+01 4.3170493518268621e+01 -4.6471661962029586e+01 6.5966511353988713e+00 
+          -nan -nan nan -nan -nan nan nan -nan nan nan 
         </Neuron>
         <Neuron NSynapses="10">
-          -1.0420082514440223e+01 -2.9236841917604846e+00 6.9019230477771840e+00 -8.3224426122440569e+00 -7.9201305735266789e+00 1.1598119865055123e+01 -3.5005073761730521e+00 3.1943283689964401e+00 1.3441729630564980e+01 4.9411996852913825e-01 
+          -nan -nan nan -nan -nan nan nan -nan nan nan 
         </Neuron>
         <Neuron NSynapses="10">
-          -1.6811956574546130e+01 3.8500127710079184e+01 -4.8782469337115506e+00 5.3694557165428215e+01 -4.8930064966547114e+01 7.4569861704085960e-01 1.5365961617570052e+01 -1.3212568770170138e+01 -1.8350637937325647e+01 4.4387023585447842e+00 
+          -nan -nan nan -nan -nan nan nan -nan nan nan 
         </Neuron>
       </Layer>
       <Layer Index="1" NNeurons="11">
         <Neuron NSynapses="1">
-          -1.6338431343317306e+00 
+          -nan 
         </Neuron>
         <Neuron NSynapses="1">
-          6.6270489643140551e-01 
+          -nan 
         </Neuron>
         <Neuron NSynapses="1">
-          -4.2592416824519691e-01 
+          nan 
         </Neuron>
         <Neuron NSynapses="1">
-          1.9327300559058631e+00 
+          -nan 
         </Neuron>
         <Neuron NSynapses="1">
-          -3.6052361287933254e-01 
+          -nan 
         </Neuron>
         <Neuron NSynapses="1">
-          1.0509015476035748e+00 
+          nan 
         </Neuron>
         <Neuron NSynapses="1">
-          -3.7663795419782425e-01 
+          nan 
         </Neuron>
         <Neuron NSynapses="1">
-          -5.9261815792706596e-01 
+          -nan 
         </Neuron>
         <Neuron NSynapses="1">
-          1.2029870542566654e+00 
+          nan 
         </Neuron>
         <Neuron NSynapses="1">
-          1.7664712509024072e+00 
+          nan 
         </Neuron>
         <Neuron NSynapses="1">
-          -4.4893897650442965e-01 
+          -nan 
         </Neuron>
       </Layer>
       <Layer Index="2" NNeurons="1">

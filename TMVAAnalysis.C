@@ -63,14 +63,14 @@ void TMVAAnalysis()
 	//TString dir = "/afs/cern.ch/user/a/addropul/CMSSW_10_6_0_pre4/src/L1Trigger/Run3Ntuplizer/test/";
 	//TString key = "5";
 	//TString inputFilename_VBF = dir + "l1TNtuple-VBF-large.root";
-	TString inputFilename_VBF = "/afs/cern.ch/work/o/ojalvo/public/forAdriana/VBF-Htt.root";
-	TString inputFilename_ZB = "/afs/cern.ch/work/a/addropul/l1TNtuple-DY.root";
+	TString inputFilename_VBF = "/afs/cern.ch/user/n/nicooper/forNico/VBFlarge.root";
+	//TString inputFilename_ZB = "/afs/cern.ch/work/a/addropul/l1TNtuple-DY.root";
 	//TString inputFilename_ZB =  "/afs/cern.ch/work/a/addropul/ZeroBias_all.root";
-	//TString inputFilename_ZB =  "/afs/cern.ch/work/o/ojalvo/public/forAdriana/ZeroBiasLarge.root";
+	TString inputFilename_ZB =  "/afs/cern.ch/user/n/nicooper/forNico/ZeroBiasLarge.root";
 	// Get input file and declare output file where TMVA will store ntuples, hists, etc.
 	TFile *inputFile_VBF = new TFile(inputFilename_VBF.Data());
 	TFile *inputFile_ZB = new TFile(inputFilename_ZB.Data());
-	TString outputFilename = "TMVA_output_DY_newsig.root";
+	TString outputFilename = "TMVA_output_VBF.root";
 	TFile *outFile = new TFile(outputFilename, "RECREATE");
 	
 	// Get input tree
@@ -82,9 +82,7 @@ void TMVAAnalysis()
 	TTree *bkgTree = inputTree_ZB->CloneTree(0);
 
 	// Declare variables to read from TTree
-	Double_t recoPt_1, recoEta_1, recoPhi_1, recoNthJet_1, recoPt_2, recoEta_2, recoPhi_2, recoNthJet_2,
-	recoDeltaEta, recoDeltaPhi, recoDeltaR, recoMass, l1Pt_1, l1Eta_1, l1Phi_1, l1NthJet_1, l1Pt_2, l1Eta_2,
-	l1Phi_2, l1NthJet_2, l1DeltaEta, l1DeltaPhi, l1DeltaR, l1Mass, l1Matched_1, l1Matched_2;
+	Double_t recoPt_1, recoEta_1, recoPhi_1, recoNthJet_1, recoPt_2, recoEta_2, recoPhi_2, recoNthJet_2, recoDeltaEta, recoDeltaPhi, recoDeltaR, recoMass, l1Pt_1, l1Eta_1, l1Phi_1, l1NthJet_1, l1Pt_2, l1Eta_2, l1Phi_2, l1NthJet_2, l1DeltaEta, l1DeltaPhi, l1DeltaR, l1Mass, l1Matched_1, l1Matched_2;
 	
 	Int_t  nRecoJets, nL1Jets;
 
@@ -105,23 +103,22 @@ void TMVAAnalysis()
 	inputTree_VBF->SetBranchAddress("recoDeltaEta", &recoDeltaEta);
 	inputTree_VBF->SetBranchAddress("recoDeltaPhi", &recoDeltaPhi);
 	inputTree_VBF->SetBranchAddress("recoMass", &recoMass);
-	inputTree_VBF->SetBranchAddress("l1Pt_1",    &l1Pt_1);
-	inputTree_VBF->SetBranchAddress("l1Pt_2",   &l1Pt_2);
+	inputTree_VBF->SetBranchAddress("l1Pt_1", &l1Pt_1);
+	inputTree_VBF->SetBranchAddress("l1Pt_2", &l1Pt_2);
 	inputTree_VBF->SetBranchAddress("l1DeltaEta", &l1DeltaEta);
-        inputTree_VBF->SetBranchAddress("l1DeltaPhi",   &l1DeltaPhi);
-        inputTree_VBF->SetBranchAddress("l1Mass", &l1Mass);
+	inputTree_VBF->SetBranchAddress("l1DeltaPhi", &l1DeltaPhi);
+	inputTree_VBF->SetBranchAddress("l1Mass", &l1Mass);
 
-        inputTree_ZB->SetBranchAddress("recoPt_1", &recoPt_1);
-        inputTree_ZB->SetBranchAddress("recoPt_2", &recoPt_2);
-        inputTree_ZB->SetBranchAddress("recoDeltaEta", &recoDeltaEta);
-        inputTree_ZB->SetBranchAddress("recoDeltaPhi", &recoDeltaPhi);
-        inputTree_ZB->SetBranchAddress("recoMass", &recoMass);
-        inputTree_ZB->SetBranchAddress("l1Pt_1",    &l1Pt_1);
-        inputTree_ZB->SetBranchAddress("l1Pt_2",   &l1Pt_2);
-        inputTree_ZB->SetBranchAddress("l1DeltaEta", &l1DeltaEta);
-        inputTree_ZB->SetBranchAddress("l1DeltaPhi",   &l1DeltaPhi);
-        inputTree_ZB->SetBranchAddress("l1Mass", &l1Mass);
-
+	inputTree_ZB->SetBranchAddress("recoPt_1", &recoPt_1);
+	inputTree_ZB->SetBranchAddress("recoPt_2", &recoPt_2);
+	inputTree_ZB->SetBranchAddress("recoDeltaEta", &recoDeltaEta);
+	inputTree_ZB->SetBranchAddress("recoDeltaPhi", &recoDeltaPhi);
+	inputTree_ZB->SetBranchAddress("recoMass", &recoMass);
+	inputTree_ZB->SetBranchAddress("l1Pt_1", &l1Pt_1);
+	inputTree_ZB->SetBranchAddress("l1Pt_2", &l1Pt_2);
+	inputTree_ZB->SetBranchAddress("l1DeltaEta", &l1DeltaEta);
+	inputTree_ZB->SetBranchAddress("l1DeltaPhi", &l1DeltaPhi);
+	inputTree_ZB->SetBranchAddress("l1Mass", &l1Mass);
 	// Loop through jets and fill sigTree and bkgTree
 	Int_t i;
 	Int_t j;
@@ -158,12 +155,12 @@ void TMVAAnalysis()
 	// Note that you may also use variable expressions, such as: 
 	// "3*var1/var2*abs(var3)". [All types of expressions that can also be
 	// parsed by TTree::Draw( "expression" )]
-
+	
 	dataloader->AddVariable("l1Pt_1", 'D');
 	dataloader->AddVariable("l1Pt_2", 'D');
 	dataloader->AddVariable("l1DeltaEta", 'D');
 	dataloader->AddVariable("l1DeltaPhi", 'D');
-	dataloader->AddVariable("l1Mass",    'D');
+	dataloader->AddVariable("l1Mass", 'D');
 
 	// You can add an arbitrary number of signal or background trees
 	// Here we set the global event weights per tree to 1.0
